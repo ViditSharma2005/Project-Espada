@@ -1,11 +1,10 @@
-import React from 'react'
+import { Suspense } from "react";
+import { ArticleView } from "@/components/shell/article/ArticleView";
 
-const ArticlePage = () => {
+export default function ArticlePage() {
   return (
-    <div>
-      HA HA.. The Article page is in development.
-    </div>
-  )
+    <Suspense fallback={<div className="text-sm text-muted-foreground">Loading articles...</div>}>
+      <ArticleView />
+    </Suspense>
+  );
 }
-
-export default ArticlePage

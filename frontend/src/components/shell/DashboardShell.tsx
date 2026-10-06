@@ -57,7 +57,7 @@ export function DashboardShell({
   navItems = defaultNavItems,
   companyName = "Project",
   userName = "Current User",
-  userAvatar = "/logo.svg",
+  userAvatar = "/logo.jpeg",
   topBarContent,
   rightPanel,
 }: DashboardShellProps) {

@@ -50,7 +50,7 @@ export function Navbar() {
   const logoElement = (
     <div className="w-8 h-8 rounded-full overflow-hidden border-0 border-gray-300">
       <img
-        src="/logo.svg"
+        src="/logo.jpeg"
         alt="Logo"
         className="w-full h-full object-cover rounded-full border-2 border-blue-500"
       />

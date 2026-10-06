@@ -16,7 +16,7 @@ export default function LandingLayout({
       <PageFooter
         logo={{
           url: "/",
-          src: "/logo.svg",
+          src: "/logo.jpeg",
           alt: `${PROJECT_NAME} logo`,
           title: PROJECT_NAME,
         }}

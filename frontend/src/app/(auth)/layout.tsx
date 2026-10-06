@@ -15,7 +15,7 @@ export default function signinLayout({
       <PageFooter
         logo={{
           url: "/",
-          src: "/logo.svg",
+          src: "/logo.jpeg",
           alt: `${PROJECT_NAME} logo`,
           title: PROJECT_NAME,
         }}
