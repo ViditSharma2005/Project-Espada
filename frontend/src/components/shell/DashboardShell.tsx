@@ -20,6 +20,10 @@ import {
   MessagesSquare,
   GraduationCap,
   GitBranchIcon,
+  Earth,
+  Wrench,
+  Users,
+  MessageCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GiThumbDown } from "react-icons/gi";
@@ -41,14 +45,11 @@ interface DashboardShellProps {
 }
 
 const defaultNavItems: NavItem[] = [
-  { label: "News", href: "/news", icon: <Newspaper className="size-5" /> },
-  { label: "Dashboard", href: "/dashboard", icon: <LayoutDashboard className="size-5" /> },
-  { label: "Article", href: "/article", icon: <Feather className="size-5" /> },
-  { label: "Problem Solving", href: "/problemSolving", icon: <CodeXml className="size-5" /> },
-  { label: "Open Source", href: "/opensource", icon: <GitBranchIcon className="size-5" /> },
-  { label: "Academics", href: "/academics", icon: <GraduationCap className="size-5" /> },
-  { label: "Connect", href: "/connect", icon: <Headset className="size-5" /> },
-  { label: "Feedback", href: "/feedback", icon: <MessagesSquare className="size-5" /> },
+  { label: "Explore", href: "/explore", icon: <Earth className="size-5" /> },
+  { label: "Article", href: "/article", icon: <Newspaper className="size-5" /> },
+  { label: "Generator", href: "/generator", icon: <Wrench className="size-5" /> },
+  { label: "Connect", href: "/connect", icon: <Users className="size-5" /> },
+  { label: "Feedback", href: "/feedback", icon: <MessageCircle className="size-5" /> },
 ];
 
 export function DashboardShell({
