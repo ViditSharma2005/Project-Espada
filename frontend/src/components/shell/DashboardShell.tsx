@@ -56,7 +56,7 @@ export function DashboardShell({
   children,
   navItems = defaultNavItems,
   companyName = "Backspaces",
-  userName = "Vidit Sharma",
+  userName = "Current User",
   userAvatar = "/logo.svg",
   topBarContent,
   rightPanel,
