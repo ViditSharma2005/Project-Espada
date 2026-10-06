@@ -11,6 +11,7 @@ import { FeedbackDetails } from "./FeedbackDetails";
 import { FeedbackProgress } from "./FeedbackProgress";
 import { FeedbackList, type FeedbackTab } from "./FeedbackList";
 import { FeedbackDialog } from "./FeedbackDialog";
+import { PROJECT_NAME } from "@/lib/site-config";
 
 const mockFeedback: FeedbackItem[] = [
   {
@@ -57,7 +58,7 @@ export function FeedbackPageContent() {
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="mt-1 text-[13px] text-white/40">
-            Help us improve Backspaces. Share your thoughts, report issues or suggest new features.
+            Help us improve . Share your thoughts, report issues or suggest new features.
           </p>
         </div>
         <button

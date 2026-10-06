@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { PROJECT_NAME } from "@/lib/site-config";
 
 export interface FaqItem {
   question: string;
@@ -14,19 +15,19 @@ export interface Faq5Props {
 
 const defaultFaqs: FaqItem[] = [
   {
-    question: "What is Backspaces?",
+    question: `What is ${PROJECT_NAME}?`,
     answer:
-      "Backspaces is a dev space built for students and developers who are eager to code — a place to solve real problems, share what you're building, and grow together, especially where structured mentorship and guidance are hard to come by.",
+      `${PROJECT_NAME} is a dev space built for students and developers who are eager to code — a place to solve real problems, share what you're building, and grow together, especially where structured mentorship and guidance are hard to come by.`,
   },
   {
-    question: "Who is Backspaces for?",
+    question: `Who is ${PROJECT_NAME} for?`,
     answer:
       "Anyone who wants to learn by building — whether you're just starting out with the basics or already shipping your own projects. No formal experience required.",
   },
   {
-    question: "Is Backspaces free to use?",
+    question: `Is ${PROJECT_NAME} free to use?`,
     answer:
-      "Yes, Backspaces is free to join and use. The goal is to make this kind of support accessible to every student who wants it.",
+      `Yes, ${PROJECT_NAME} is free to join and use. The goal is to make this kind of support accessible to every student who wants it.`,
   },
   {
     question: "What kind of problems will I find here?",
@@ -36,7 +37,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: "Can I share and get feedback on my own projects?",
     answer:
-      "Yes, sharing your work and getting genuine feedback from other developers is a core part of what Backspaces is built for.",
+      `Yes, sharing your work and getting genuine feedback from other developers is a core part of what ${PROJECT_NAME} is built for.`,
   },
 ];
 
@@ -75,4 +76,3 @@ export const FAQ = ({
     </section>
   );
 };
-

@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/ui/Navbar";
 import { PageFooter } from "@/components/ui/PageFooter";
+import { PROJECT_NAME } from "@/lib/site-config";
 
 export default function LandingLayout({
   children,
@@ -16,8 +17,8 @@ export default function LandingLayout({
         logo={{
           url: "/",
           src: "/logo.svg",
-          alt: "Backspaces logo",
-          title: "Backspaces",
+          alt: `${PROJECT_NAME} logo`,
+          title: PROJECT_NAME,
         }}
         description="A dev space built for students and developers eager to code."
         sections={[
@@ -48,7 +49,7 @@ export default function LandingLayout({
         socialLinks={[
           // adjust hrefs to your real socials once you have them
         ]}
-        copyright="© 2026 Backspaces. All rights reserved."
+        copyright={`© 2026 ${PROJECT_NAME}. All rights reserved.`}
       />
     </>
   );

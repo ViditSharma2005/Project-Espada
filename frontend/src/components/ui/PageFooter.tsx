@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaDiscord, FaTwitter } from "react-icons/fa";
 import React from "react";
+import { PROJECT_NAME } from "@/lib/site-config";
 
 interface Logo {
   url: string;
@@ -37,12 +38,11 @@ interface FooterProps {
   legalLinks?: FooterLink[];
 }
 
-// Defaults - Backspaces
 const defaultLogo: Logo = {
   url: "/",
   src: "https://cdn.21st.dev/assets/mirror/31/312257931df7cfb368e5050011630292d548b932658ebb815c426223f580d172.svg",
-  alt: "Backspaces logo",
-  title: "Backspaces",
+  alt: `${PROJECT_NAME} logo`,
+  title: PROJECT_NAME,
 };
 
 const defaultSections: FooterSection[] = [
@@ -68,7 +68,7 @@ export const PageFooter = ({
   sections = defaultSections,
   description = "A dev space built for students and developers eager to code.",
   socialLinks = defaultSocials,
-  copyright = "© 2026 Backspaces. All rights reserved.",
+  copyright = `© 2026 ${PROJECT_NAME}. All rights reserved.`,
   legalLinks = defaultLegal,
 }: FooterProps) => {
   // If socialLinks is empty array (never[]), use defaults

@@ -1,11 +1,10 @@
-import React from 'react'
+import { Suspense } from "react";
+import { ExploreView } from "@/components/shell/explore/ExploreView";
 
-const ExplorePage = () => {
+export default function ExplorePage() {
   return (
-    <div>
-      HA HA.. The Explore page is in development.
-    </div>
-  )
+    <Suspense fallback={<div className="h-full bg-background" />}>
+      <ExploreView />
+    </Suspense>
+  );
 }
-
-export default ExplorePage

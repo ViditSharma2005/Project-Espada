@@ -1,4 +1,4 @@
-// src/app/api/news/route.ts — proxy to the Backspaces News API (Render)
+// src/app/api/news/route.ts — proxy to the configured News API (Render)
 //
 // The browser calls this route (relative URL → works on prod, previews, and
 // localhost); the Next.js server forwards whitelisted query params to the

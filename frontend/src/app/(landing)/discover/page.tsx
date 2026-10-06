@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import { PROJECT_NAME } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Discover Backspaces | What You'll Find Here",
+  title: `Discover ${PROJECT_NAME} | What You'll Find Here`,
   description:
-    "Explore everything Backspaces offers — from real coding problems and project showcases to peer collaboration and growth resources for student developers.",
+    `Explore everything ${PROJECT_NAME} offers — from real coding problems and project showcases to peer collaboration and growth resources for student developers.`,
   keywords: [
-    "Backspaces features",
+    `${PROJECT_NAME} features`,
     "coding platform for students",
     "project showcase",
     "developer collaboration",
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
     "student dev space",
   ],
   openGraph: {
-    title: "Discover Backspaces",
+    title: `Discover ${PROJECT_NAME}`,
     description:
-      "See what Backspaces offers — problems worth solving, projects worth sharing, and a space to grow as a developer.",
+      `See what ${PROJECT_NAME} offers — problems worth solving, projects worth sharing, and a space to grow as a developer.`,
     type: "website",
   },
 };
@@ -59,11 +60,11 @@ export default function Discover() {
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <div className="flex flex-col items-start justify-center w-full gap-6">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
-            Discover Backspaces
+            Discover {PROJECT_NAME}
           </h1>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
-            Backspaces brings together everything a student developer
+            {PROJECT_NAME} brings together everything a student developer
             actually needs — real problems to solve, a space to share your
             work, and people to grow alongside. Here&apos;s what you&apos;ll
             find.
@@ -87,7 +88,7 @@ export default function Discover() {
 
           <p className="text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed mt-6">
             Whether you&apos;re here to solve your first real problem or ship
-            your tenth project, Backspaces gives you the space to do it —
+            your tenth project, {PROJECT_NAME} gives you the space to do it —
             surrounded by people who get it.
           </p>
         </div>

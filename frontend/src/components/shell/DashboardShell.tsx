@@ -55,7 +55,7 @@ const defaultNavItems: NavItem[] = [
 export function DashboardShell({
   children,
   navItems = defaultNavItems,
-  companyName = "Backspaces",
+  companyName = "Project",
   userName = "Current User",
   userAvatar = "/logo.svg",
   topBarContent,

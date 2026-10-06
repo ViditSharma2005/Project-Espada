@@ -1,0 +1,75 @@
+[
+  {
+    "id": "arise-awake",
+    "kind": "reel",
+    "title": "Arise, awake",
+    "description": "> Arise, awake, and stop not till the goal is reached.\n\nVivekananda kept this line from the Katha Upanishad close. It is not about hurry. It is a refusal to sit down halfway.\n\nGet up. See the work. Stay with it until it is done.",
+    "uploadedAt": "2026-09-12T09:30:00+05:30",
+    "language": "en",
+    "tags": ["practice"],
+    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
+    "uploader": { "id": "samvad", "name": "SAMVAD" },
+    "media": {
+      "src": "/DataFolder/reels/media/arise-awake.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 8
+    },
+    "source": { "work": "Katha Upanishad" }
+  },
+  {
+    "id": "strength-is-life",
+    "kind": "reel",
+    "title": "Strength is life",
+    "description": "> Strength is life, weakness is death.\n\nHe did not mean force over other people. He meant the strength to stand, to think, and to serve without folding.\n\nA life that will not try has already left the room.",
+    "uploadedAt": "2026-09-18T18:10:00+05:30",
+    "language": "en",
+    "tags": ["strength"],
+    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
+    "uploader": { "id": "samvad", "name": "SAMVAD" },
+    "media": {
+      "src": "/DataFolder/reels/media/strength-is-life.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 8
+    }
+  },
+  {
+    "id": "the-gymnasium",
+    "kind": "reel",
+    "title": "The gymnasium",
+    "description": "> The world is the great gymnasium where we come to make ourselves strong.\n\nDifficulty is not a detour. In this reading, it is the apparatus.\n\nYou do not get strong by avoiding the weight.",
+    "uploadedAt": "2026-09-24T07:45:00+05:30",
+    "language": "en",
+    "tags": ["practice"],
+    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
+    "uploader": { "id": "samvad", "name": "SAMVAD" },
+    "media": {
+      "src": "/DataFolder/reels/media/the-gymnasium.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 8
+    }
+  },
+  {
+    "id": "live-for-others",
+    "kind": "reel",
+    "title": "Live for others",
+    "description": "> They alone live who live for others, the rest are more dead than alive.\n\nThis is the hard edge of the teaching. A private win that never leaves the room is not yet a life.\n\n## What it asks\n\n- Do the work in front of you.\n- Leave someone else more able than you found them.\n- Do not confuse being busy with being alive.\n\nThe test is plain. After you pass through a place, is it better.\n\nHold that against the week you just had. Not the week you meant to have.",
+    "uploadedAt": "2026-10-02T21:05:00+05:30",
+    "language": "en",
+    "tags": ["service"],
+    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
+    "uploader": { "id": "samvad", "name": "SAMVAD" },
+    "media": {
+      "src": "/DataFolder/reels/media/live-for-others.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 8
+    }
+  }
+]

@@ -7,7 +7,9 @@
 // Matches the layout/format of the privacy-policy route: sticky sidebar
 // table of contents, stone/neutral palette, light + dark mode support.
 
-const COMPANY_NAME = "Backspaces";
+import { PROJECT_NAME } from "@/lib/site-config";
+
+const COMPANY_NAME = PROJECT_NAME;
 const SITE_URL = "https://www.backspaces.com";
 const CONTACT_EMAIL = "backspaces.devs@gmail.com";
 const MAILING_ADDRESS_LINES = [

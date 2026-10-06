@@ -7,8 +7,10 @@
 // Fill in the bracketed placeholders (company name, address, contact email,
 // server location, effective date) before publishing.
 
-const COMPANY_NAME = "Backspace";
-const COMPANY_LEGAL_NAME = "Backspaces Inc.";
+import { PROJECT_NAME } from "@/lib/site-config";
+
+const COMPANY_NAME = PROJECT_NAME;
+const COMPANY_LEGAL_NAME = `${PROJECT_NAME} Inc.`;
 const SITE_URL = "https://www.backspaces.com";
 const CONTACT_EMAIL = "privacy@example.com";
 const MAILING_ADDRESS = "None";
