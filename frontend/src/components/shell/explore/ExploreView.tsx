@@ -15,19 +15,37 @@ export function ExploreView() {
   const startId = reels.some((reel) => reel.id === requested)
     ? (requested as string)
     : (reels[0]?.id ?? "");
+  const generated = params.get("generated") === "1";
 
   const [activeId, setActiveId] = useState(startId);
+  const [generatedExplanation, setGeneratedExplanation] = useState<string>();
   const { muted, volume, setMuted, setVolume, toggleMuted } = usePlayback();
   const saved = useSavedReels();
   const reel = getReel(activeId) ?? reels[0];
 
   useEffect(() => {
+    if (!generated) {
+      setGeneratedExplanation(undefined);
+      return;
+    }
+    try {
+      const stored = JSON.parse(sessionStorage.getItem("samvad.generated-explanation") || "null") as {
+        reelId?: string;
+        explanation?: string;
+      } | null;
+      setGeneratedExplanation(stored?.reelId === reel?.id ? stored.explanation : undefined);
+    } catch {
+      setGeneratedExplanation(undefined);
+    }
+  }, [generated, reel?.id]);
+
+  useEffect(() => {
     if (!reel) return;
-    const next = `/explore?reel=${encodeURIComponent(reel.id)}`;
+    const next = `/explore?reel=${encodeURIComponent(reel.id)}${generated ? "&generated=1" : ""}`;
     if (`${window.location.pathname}${window.location.search}` !== next) {
       window.history.replaceState(null, "", next);
     }
-  }, [reel]);
+  }, [generated, reel]);
 
   const onAutoplayBlocked = useCallback(() => {
     setMuted(true);
@@ -56,7 +74,11 @@ export function ExploreView() {
       />
 
       <div className="flex h-[44%] min-h-0 flex-col border-t border-white/10 md:h-full md:w-1/2 md:border-l md:border-t-0">
-        <ReelReading reel={reel} className="h-[70%]" />
+        <ReelReading
+          reel={reel}
+          generatedExplanation={generatedExplanation}
+          className="h-[70%]"
+        />
         <ReelRecord
           reel={reel}
           saved={saved.has(reel.id)}

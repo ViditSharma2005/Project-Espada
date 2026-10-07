@@ -8,6 +8,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { reelHref } from "@/app/DataFolder/explore";
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
@@ -178,7 +179,13 @@ export function GeneratedReelCard({
         </p>
 
         <div className="border-t border-white/10 pt-3.5">
-          <MarkdownBody source={record.description} />
+          <MarkdownBody
+            source={
+              meta.explanation
+                ? `${record.description}\n\n## Why this fits your prompt\n\n${meta.explanation}`
+                : record.description
+            }
+          />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 border-t border-white/10 pt-3.5">
@@ -210,7 +217,15 @@ export function GeneratedReelCard({
             Generate another
           </button>
           <Link
-            href="/explore"
+            href={`${reelHref(meta.matched.mediaId)}&generated=1`}
+            onClick={() => {
+              if (meta.explanation) {
+                sessionStorage.setItem(
+                  "samvad.generated-explanation",
+                  JSON.stringify({ reelId: meta.matched.mediaId, explanation: meta.explanation })
+                );
+              }
+            }}
             className="ml-auto inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
           >
             Open Explore

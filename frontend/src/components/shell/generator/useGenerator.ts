@@ -4,6 +4,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { corpus } from "@/app/DataFolder/generator";
 import {
   buildGeneratedReel,
   buildStatusLines,
@@ -22,6 +23,7 @@ export function useGenerator() {
   const [elapsedMs, setElapsedMs] = useState(0);
   const [lines, setLines] = useState<string[]>([]);
   const [result, setResult] = useState<GeneratedReel | null>(null);
+  const requestRef = useRef(0);
 
   const intervalRef = useRef<number | null>(null);
 
@@ -39,11 +41,26 @@ export function useGenerator() {
     (prompt: string, lengthSec: LengthSec) => {
       stopTicking();
 
-      const match = matchQuote(prompt);
-      setLines(buildStatusLines(match, lengthSec));
+      const localMatch = matchQuote(prompt);
+      const requestId = ++requestRef.current;
+      setLines(buildStatusLines(localMatch, lengthSec));
       setResult(null);
       setElapsedMs(0);
       setPhase("generating");
+
+      // Ask Gemini in parallel with the visual render. The local matcher is
+      // always the safe fallback, so a missing key/network failure never
+      // prevents a reel from being generated.
+      const aiSelection = fetch("/api/generator", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      })
+        .then(async (response) => {
+          if (!response.ok) return null;
+          return (await response.json()) as { selectedId?: string; explanation?: string };
+        })
+        .catch(() => null);
 
       const startedAt = performance.now();
       intervalRef.current = window.setInterval(() => {
@@ -51,8 +68,17 @@ export function useGenerator() {
         if (elapsed >= GENERATION_MS) {
           stopTicking();
           setElapsedMs(GENERATION_MS);
-          setResult(buildGeneratedReel(match, prompt, lengthSec));
-          setPhase("done");
+          void aiSelection.then((ai) => {
+            if (requestId !== requestRef.current) return;
+            const selected = ai?.selectedId
+              ? corpus.find((entry) => entry.id === ai.selectedId)
+              : undefined;
+            const finalMatch = selected
+              ? { entry: selected, score: 100, terms: selected.themes.slice(0, 4) }
+              : localMatch;
+            setResult(buildGeneratedReel(finalMatch, prompt, lengthSec, ai?.explanation));
+            setPhase("done");
+          });
           return;
         }
         setElapsedMs(elapsed);

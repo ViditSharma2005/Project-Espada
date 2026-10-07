@@ -35,6 +35,8 @@ export type GeneratedReel = {
     matchScore: number;
     matchedTerms: string[];
     generatedAt: string;
+    /** AI explanation shown only on the generated result. */
+    explanation?: string;
   };
 };
 
@@ -146,7 +148,8 @@ function pairedMedia(entry: QuoteEntry, lengthSec: LengthSec): Reel["media"] {
 export function buildGeneratedReel(
   match: MatchResult,
   prompt: string,
-  lengthSec: LengthSec
+  lengthSec: LengthSec,
+  explanation?: string
 ): GeneratedReel {
   const suffix = Math.random().toString(36).slice(2, 6);
   const generatedAt = new Date().toISOString();
@@ -174,6 +177,7 @@ export function buildGeneratedReel(
       matchScore: match.score,
       matchedTerms: match.terms,
       generatedAt,
+      explanation,
     },
   };
 }

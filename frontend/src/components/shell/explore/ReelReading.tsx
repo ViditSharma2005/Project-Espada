@@ -3,7 +3,15 @@ import type { Reel } from "@/app/DataFolder/explore";
 import { cn } from "@/lib/utils";
 import { MarkdownBody } from "./MarkdownBody";
 
-export function ReelReading({ reel, className }: { reel: Reel; className?: string }) {
+export function ReelReading({
+  reel,
+  className,
+  generatedExplanation,
+}: {
+  reel: Reel;
+  className?: string;
+  generatedExplanation?: string;
+}) {
   return (
     <section aria-label="Reading" className={cn("flex min-h-0 flex-col", className)}>
       <h2
@@ -17,7 +25,13 @@ export function ReelReading({ reel, className }: { reel: Reel; className?: strin
         className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-6 pt-4 sm:px-6"
       >
         <div className="max-w-[40rem]">
-          <MarkdownBody source={reel.description} />
+          <MarkdownBody
+            source={
+              generatedExplanation
+                ? `${reel.description}\n\n## Why this fits your prompt\n\n${generatedExplanation}`
+                : reel.description
+            }
+          />
         </div>
       </div>
     </section>
