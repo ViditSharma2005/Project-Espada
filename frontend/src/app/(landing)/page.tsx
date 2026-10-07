@@ -21,12 +21,12 @@ const TEACHINGS: WorksWheelItem[] = [
     href: "/article?article=raja-yoga",
   },
   {
-    title: "The Chicago Triumph",
+    title: "The Awakening of Kanyakumari",
     image: "/DataFolder/landing/4.jpeg",
     href: "/article?article=fomo",
   },
   {
-    title: "Teaching the West",
+    title: "The Chicago Triumph",
     image: "/DataFolder/landing/5.jpeg",
     href: "/article?article=focus",
   },
@@ -41,13 +41,13 @@ const TEACHINGS: WorksWheelItem[] = [
     href: "/article?article=vedanta",
   },
   {
-    title: "Seva",
-    image: "/DataFolder/articles/covers/live-for-others.jpg",
+    title: "Teaching the West",
+    image: "/DataFolder/landing/8.jpeg",
     href: "/article?article=seva",
   },
   {
-    title: "Concentration",
-    image: "/DataFolder/articles/covers/education.jpg",
+    title: "The Final Silence",
+    image: "/DataFolder/landing/9.jpg",
     href: "/article?article=concentration",
   },
 ];

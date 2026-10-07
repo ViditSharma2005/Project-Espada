@@ -16,8 +16,8 @@ export interface WorksWheelProps
   action?: string;
 }
 
-const CARD_H = 0.38;
-const CARD_MAX_W = 0.34;
+const CARD_H = 0.5;
+const CARD_MAX_W = 0.46;
 const CARD_RATIO = 1.45;
 const STEP = 40;
 const DRUM = 2.22;
@@ -140,11 +140,12 @@ export function WorksWheel({
 
       for (let i = 0; i < count; i++) {
         const d = i - pos;
-        const drumDeg = d * STEP;
+        // Negative angles reverse both the opening ring and the vertical drum.
+        const drumDeg = -d * STEP;
         const card = cardRefs.current[i];
         if (card) {
           card.style.transform = place(
-            d * (360 / count),
+            -d * (360 / count),
             drumDeg,
             ringR,
             drumR,
@@ -296,10 +297,6 @@ export function WorksWheel({
       >
         {items[active]?.title}
       </div>
-
-      <p className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.28em] text-white/50 uppercase sm:text-xs">
-        Scroll or drag to explore the teachings
-      </p>
 
       <ol
         className="absolute top-[18%] right-[2.5%] text-right leading-[1.75] text-white/40"

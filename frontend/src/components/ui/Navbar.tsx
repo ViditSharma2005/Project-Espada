@@ -59,9 +59,8 @@ export function Navbar() {
 
   const navLinksData = [
     { label: 'Home', href: '/' },
+    { label: 'Explore', href: '/explore' },
     { label: 'About', href: '/about' },
-    { label: 'Discover', href: '/discover' },
-    { label: 'Contribute', href: '/contributor-space' },
   ];
 
   const loginButtonElement = (
