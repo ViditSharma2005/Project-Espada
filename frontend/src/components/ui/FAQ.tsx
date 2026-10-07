@@ -16,60 +16,69 @@ export interface Faq5Props {
 const defaultFaqs: FaqItem[] = [
   {
     question: `What is ${PROJECT_NAME}?`,
-    answer:
-      `${PROJECT_NAME} is a dev space built for students and developers who are eager to code — a place to solve real problems, share what you're building, and grow together, especially where structured mentorship and guidance are hard to come by.`,
+    answer: `${PROJECT_NAME} is a learning and reflection platform centered on the teachings of Swami Vivekananda. It connects longer articles, short reels, topic-based prompts, and guided interaction so that each idea can be explored in more than one form.`,
   },
   {
-    question: `Who is ${PROJECT_NAME} for?`,
+    question: "Is this an official publication of the Ramakrishna Mission?",
     answer:
-      "Anyone who wants to learn by building — whether you're just starting out with the basics or already shipping your own projects. No formal experience required.",
+      "No. This is an independent educational project. It is not an official publication of the Ramakrishna Math or Ramakrishna Mission. Readers should consult authoritative editions of the Complete Works and original texts for formal study.",
+  },
+  {
+    question: "How are articles and reels connected?",
+    answer:
+      "Every article has a topic ID linked to a matching reel. A reading on Raja Yoga opens the Raja Yoga reel; a reading on Seva opens the Seva reel. Explore uses the same catalog, so the title, teaching, description, and media stay consistent.",
+  },
+  {
+    question: "What does the reel generator do?",
+    answer:
+      "The current generator matches words and themes in your prompt with the most relevant teaching in the curated catalog. It then presents the corresponding reel and explanation. It does not invent a new quotation or replace the source text.",
+  },
+  {
+    question: "Are all displayed words direct quotations?",
+    answer:
+      "Quoted lines are presented separately from the platform's explanatory writing. Descriptions and articles are interpretive guides written to provide context and practical reflection. Source or work labels are shown where available.",
+  },
+  {
+    question: "Which subjects can I explore?",
+    answer:
+      "The initial collection covers spirituality, strength, Raja Yoga, freedom from FOMO, focus, Karma Yoga, Vedanta, Seva, and concentration. More carefully reviewed topics can be added as the archive grows.",
   },
   {
     question: `Is ${PROJECT_NAME} free to use?`,
     answer:
-      `Yes, ${PROJECT_NAME} is free to join and use. The goal is to make this kind of support accessible to every student who wants it.`,
-  },
-  {
-    question: "What kind of problems will I find here?",
-    answer:
-      "Real, practical challenges pulled from real-world scenarios — not repetitive tutorial exercises you've already done a hundred times.",
-  },
-  {
-    question: "Can I share and get feedback on my own projects?",
-    answer:
-      `Yes, sharing your work and getting genuine feedback from other developers is a core part of what ${PROJECT_NAME} is built for.`,
+      "Yes. The public reading, Explore, and reflection experiences are intended to remain accessible. Some future services may require accounts or availability, but the core teaching archive is designed for open learning.",
   },
 ];
 
 export const FAQ = ({
   badge = "FAQ",
-  heading = "Common Questions & Answers",
-  description = "Find out all the essential details about our platform and how it can serve your needs.",
+  heading = "Questions before you begin",
+  description = "How the archive, reels, and prompt experience work together.",
   faqs = defaultFaqs,
 }: Faq5Props) => {
   return (
-    <section className="py-32">
-      <div className="container">
-        <div className="text-center">
-          <Badge className="text-xs font-medium">{badge}</Badge>
-          <h1 className="mt-4 text-4xl font-semibold">{heading}</h1>
-          <p className="mt-6 font-medium text-muted-foreground">
-            {description}
-          </p>
+    <section className="border-t border-white/[0.06] bg-black px-6 py-28 text-white sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="max-w-2xl">
+          <Badge className="border-orange-300/20 bg-orange-300/10 text-xs font-medium text-orange-200">
+            {badge}
+          </Badge>
+          <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">{heading}</h2>
+          <p className="mt-5 text-base leading-7 text-white/45">{description}</p>
         </div>
-        <div className="mx-auto mt-14 max-w-screen-sm">
+
+        <div className="mt-14 border-t border-white/10">
           {faqs.map((faq, index) => (
-            <div key={index} className="mb-8 flex gap-4">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-secondary font-mono text-xs text-primary">
-                {index + 1}
+            <article
+              key={faq.question}
+              className="grid gap-4 border-b border-white/10 py-7 sm:grid-cols-[3rem_0.8fr_1.2fr] sm:gap-8"
+            >
+              <span className="font-mono text-xs text-orange-300/80">
+                {String(index + 1).padStart(2, "0")}
               </span>
-              <div>
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="font-medium">{faq.question}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">{faq.answer}</p>
-              </div>
-            </div>
+              <h3 className="font-medium text-white/90">{faq.question}</h3>
+              <p className="text-sm leading-6 text-white/50">{faq.answer}</p>
+            </article>
           ))}
         </div>
       </div>

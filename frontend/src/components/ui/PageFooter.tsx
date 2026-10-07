@@ -1,8 +1,6 @@
-// src/components/ui/PageFooter.tsx - FIXES TS2322 BUILD ERROR
-// Accepts props (logo, sections, etc) but also works without them
 import Link from "next/link";
-import { FaGithub, FaInstagram, FaDiscord, FaTwitter } from "react-icons/fa";
-import React from "react";
+import { FaGithub } from "react-icons/fa";
+import type React from "react";
 import { PROJECT_NAME } from "@/lib/site-config";
 
 interface Logo {
@@ -33,101 +31,136 @@ interface FooterProps {
   logo?: Logo;
   sections?: FooterSection[];
   description?: string;
-  socialLinks?: SocialLink[] | any[]; // any[] to allow never[] from TS
+  socialLinks?: SocialLink[];
   copyright?: string;
   legalLinks?: FooterLink[];
 }
 
 const defaultLogo: Logo = {
   url: "/",
-  src: "https://cdn.21st.dev/assets/mirror/31/312257931df7cfb368e5050011630292d548b932658ebb815c426223f580d172.svg",
+  src: "/logo.jpeg",
   alt: `${PROJECT_NAME} logo`,
   title: PROJECT_NAME,
 };
 
 const defaultSections: FooterSection[] = [
-  { title: "Explore", links: [{ name: "About", href: "/about" }, { name: "Discover", href: "/discover" }, { name: "Home", href: "/" }, { name: "Contribute", href: "/contribute" }] },
-  { title: "Company", links: [{ name: "Contribute", href: "/contribute" }, { name: "Contact", href: "/contact" }] },
-  { title: "Resources", links: [{ name: "Help", href: "/help" }, { name: "Privacy", href: "/privacy" }] },
+  {
+    title: "Teachings",
+    links: [
+      { name: "Articles", href: "/article" },
+      { name: "Explore reels", href: "/explore" },
+      { name: "Prompt experience", href: "/generator" },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      { name: "Connect", href: "/connect" },
+      { name: "Share feedback", href: "/feedback" },
+      { name: "Contribute", href: "/contributor-space" },
+    ],
+  },
+  {
+    title: "Project",
+    links: [
+      { name: "About", href: "/about" },
+      { name: "Discover", href: "/discover" },
+      { name: "Privacy", href: "/policy" },
+      { name: "Terms", href: "/terms" },
+    ],
+  },
 ];
 
 const defaultSocials: SocialLink[] = [
-  { Icon: FaGithub, href: "https://github.com/Backspaces-devs/backspaces", label: "GitHub" },
-  { Icon: FaInstagram, href: "https://www.instagram.com/bckspaces/", label: "Instagram" },
-  { Icon: FaDiscord, href: "https://discord.gg/qQ5yvgB2N8", label: "Discord" },
-  { Icon: FaTwitter, href: "https://x.com/Backspaces_devs", label: "Twitter" },
+  {
+    Icon: FaGithub,
+    href: "https://github.com/ViditSharma2005/Project-Espada",
+    label: "Project repository on GitHub",
+  },
 ];
 
-const defaultLegal = [
-  { name: "Terms and Conditions", href: "/terms" },
-  { name: "Privacy Policy", href: "/policy" },
+const defaultLegal: FooterLink[] = [
+  { name: "Terms", href: "/terms" },
+  { name: "Privacy", href: "/policy" },
 ];
 
 export const PageFooter = ({
   logo = defaultLogo,
   sections = defaultSections,
-  description = "A dev space built for students and developers eager to code.",
+  description = "A digital space for reading, watching, and applying the teachings of Swami Vivekananda.",
   socialLinks = defaultSocials,
-  copyright = `© 2026 ${PROJECT_NAME}. All rights reserved.`,
+  copyright = `© 2026 ${PROJECT_NAME}. Independent educational project.`,
   legalLinks = defaultLegal,
 }: FooterProps) => {
-  // If socialLinks is empty array (never[]), use defaults
-  const socialsToShow = socialLinks && socialLinks.length > 0 ? socialLinks : defaultSocials;
-
   return (
-    <footer className="w-full bg-[#0a0a0a] border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-14">
-        <div className="flex flex-col lg:flex-row justify-between gap-10">
-          <div className="flex flex-col gap-4 max-w-sm">
-            <div className="flex items-center gap-2.5">
-              <Link href={logo.url}>
-                <img src={logo.src} alt={logo.alt} className="h-8 w-8 rounded-full border border-blue-500/50 object-cover" />
+    <footer className="w-full border-t border-white/[0.08] bg-[#060606] text-white">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-16">
+        <div className="grid gap-14 lg:grid-cols-[1.1fr_1.4fr]">
+          <div className="max-w-md">
+            <div className="flex items-center gap-3">
+              <Link href={logo.url} aria-label="Return home">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="size-10 rounded-full border border-orange-300/30 object-cover"
+                />
               </Link>
-              <span className="text-[18px] font-semibold text-white">{logo.title}</span>
+              <span className="text-lg font-semibold tracking-tight">{logo.title}</span>
             </div>
-            <p className="text-[13px] text-white/50 leading-relaxed">{description}</p>
+            <p className="mt-5 text-sm leading-6 text-white/45">{description}</p>
+            <p className="mt-4 text-xs leading-5 text-white/25">
+              Not an official publication of the Ramakrishna Math or Ramakrishna Mission.
+            </p>
 
-            <div className="flex items-center gap-3 mt-3">
-              {socialsToShow.map((s: any) => {
-                const IconComp = s.Icon;
-                return (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="size-9 flex items-center justify-center rounded-full bg-white text-black hover:bg-white/90 transition-colors"
-                  >
-                    {s.icon ? s.icon : IconComp ? <IconComp className="size-[18px]" /> : null}
-                  </a>
-                );
-              })}
-            </div>
+            {socialLinks.length > 0 ? (
+              <div className="mt-7 flex items-center gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.Icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/65 transition hover:border-orange-300/30 hover:text-orange-200"
+                    >
+                      {social.icon ?? (Icon ? <Icon className="size-4" /> : null)}
+                    </a>
+                  );
+                })}
+              </div>
+            ) : null}
           </div>
 
-          <div className="flex gap-12 sm:gap-20">
+          <nav className="grid grid-cols-2 gap-10 sm:grid-cols-3" aria-label="Footer navigation">
             {sections.map((section) => (
               <div key={section.title}>
-                <h4 className="text-sm font-semibold text-white mb-4">{section.title}</h4>
-                <ul className="space-y-2.5 text-[13px] text-white/50">
+                <h3 className="text-xs font-medium tracking-[0.18em] text-orange-200 uppercase">
+                  {section.title}
+                </h3>
+                <ul className="mt-5 space-y-3 text-sm text-white/45">
                   {section.links.map((link) => (
-                    <li key={link.name}>
-                      <Link href={link.href} className="hover:text-white">{link.name}</Link>
+                    <li key={`${section.title}-${link.name}`}>
+                      <Link href={link.href} className="transition hover:text-white">
+                        {link.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
-          </div>
+          </nav>
         </div>
 
-        <div className="h-px bg-white/[0.06] mt-12 mb-6" />
-        <div className="flex flex-col sm:flex-row justify-between gap-3 text-[12px] text-white/40">
+        <div className="mt-14 flex flex-col justify-between gap-4 border-t border-white/[0.08] pt-6 text-xs text-white/30 sm:flex-row">
           <p>{copyright}</p>
-          <div className="flex gap-4">
-            {legalLinks.map((l) => (
-              <Link key={l.name} href={l.href} className="hover:text-white/70">{l.name}</Link>
+          <div className="flex gap-5">
+            {legalLinks.map((link) => (
+              <Link key={link.name} href={link.href} className="transition hover:text-white/70">
+                {link.name}
+              </Link>
             ))}
           </div>
         </div>

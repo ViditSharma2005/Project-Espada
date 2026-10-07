@@ -285,7 +285,7 @@ export function WorksWheel({
 
       <div
         ref={labelRef}
-        className="pointer-events-none absolute inset-0 grid place-items-center font-semibold tracking-[-0.06em]"
+        className="pointer-events-none absolute inset-0 grid place-items-center font-bold tracking-[-0.06em]"
         style={{ fontSize: metrics.title }}
       >
         {label}

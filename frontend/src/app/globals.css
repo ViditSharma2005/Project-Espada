@@ -2,6 +2,18 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@font-face {
+  font-family: "ShrijanCustom";
+  src: url("/fonts/shrijan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.shrijan-font {
+  font-family: "ShrijanCustom", sans-serif;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
