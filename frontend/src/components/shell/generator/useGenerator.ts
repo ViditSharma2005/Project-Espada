@@ -1,5 +1,5 @@
-// src/components/shell/generator/useGenerator.ts — owns the generation state
-// machine: idle -> generating (15s hardcoded demo pipeline) -> done.
+
+
 
 "use client";
 
@@ -34,7 +34,7 @@ export function useGenerator() {
     }
   }, []);
 
-  // Never leave a stray interval behind if the page unmounts mid-run.
+  
   useEffect(() => stopTicking, [stopTicking]);
 
   const start = useCallback(
@@ -48,9 +48,9 @@ export function useGenerator() {
       setElapsedMs(0);
       setPhase("generating");
 
-      // Ask Gemini in parallel with the visual render. The local matcher is
-      // always the safe fallback, so a missing key/network failure never
-      // prevents a reel from being generated.
+      
+      
+      
       const aiSelection = fetch("/api/generator", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

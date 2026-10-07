@@ -1,8 +1,8 @@
-// src/components/shell/generator/GeneratedReelCard.tsx — the finished reel:
-// the house clip with the exact quote overlaid, plus the Explore-shaped
-// record it maps to (description, source, tags). Clicking the clip hands
-// playback to ReelStagePlayer, which covers the whole section — this card
-// pauses its own video while that player is open.
+
+
+
+
+
 
 "use client";
 
@@ -34,9 +34,9 @@ export function GeneratedReelCard({
 }: {
   reel: GeneratedReel;
   onReset: () => void;
-  /** Opens ReelStagePlayer over the whole section. */
+  
   onExpand: () => void;
-  /** True while the stage player is open — pauses this preview. */
+  
   videoPaused: boolean;
 }) {
   const { record, meta } = reel;
@@ -45,8 +45,8 @@ export function GeneratedReelCard({
   const [showJson, setShowJson] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // React's muted attribute is unreliable after first paint — drive the
-  // property directly so the shared playback state always wins.
+  
+  
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -60,7 +60,7 @@ export function GeneratedReelCard({
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1600);
     } catch {
-      setShowJson(true); // clipboard blocked — fall back to manual copy
+      setShowJson(true); 
     }
   };
 
@@ -73,7 +73,7 @@ export function GeneratedReelCard({
       transition={{ duration: 0.35, ease: "easeOut" }}
       className="flex h-full min-h-[520px] flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-5 md:min-h-0"
     >
-      {/* The reel itself — click to play it over this whole section */}
+      {}
       <div className="group relative mx-auto aspect-[9/16] h-[380px] max-h-[55%] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-black md:h-[46%]">
         <video
           ref={videoRef}
@@ -127,7 +127,7 @@ export function GeneratedReelCard({
         </div>
       </div>
 
-      {/* The record this reel maps to — same shape Explore reads. */}
+      
       <div className="flex flex-col gap-3.5">
         <div>
           <h3 className="text-base font-semibold tracking-tight text-foreground">

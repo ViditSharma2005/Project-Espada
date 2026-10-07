@@ -33,7 +33,7 @@ export function MeetingFeedbackDialog({
     () => false
   );
   const [visible, setVisible] = useState(open);
-  // Keyed by session id + position, so ticks never leak between sessions
+  
   const [completedPractices, setCompletedPractices] = useState<
     Record<string, boolean>
   >({});
@@ -85,7 +85,7 @@ export function MeetingFeedbackDialog({
       >
         <div className="absolute inset-0 rounded-none sm:rounded-[24px] bg-gradient-to-b from-amber-400/[0.08] via-transparent to-transparent pointer-events-none h-[35%]" />
 
-        {/* Header */}
+        
         <div className="relative shrink-0 p-6 sm:p-7 pb-4 border-b border-white/[0.08]">
           <button
             onClick={() => onOpenChange(false)}
@@ -111,7 +111,7 @@ export function MeetingFeedbackDialog({
 
           <div className="mt-3 flex flex-wrap items-center justify-between gap-3 text-xs text-white/60">
             <div className="flex items-center gap-2.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
+              
               <img
                 src={meeting.mentorAvatar}
                 alt={meeting.mentorName}
@@ -134,9 +134,9 @@ export function MeetingFeedbackDialog({
           </div>
         </div>
 
-        {/* Body */}
+        
         <div className="relative flex-1 overflow-y-auto p-6 sm:p-7 space-y-6 custom-scrollbar">
-          {/* Note from guide */}
+          
           <div className="rounded-xl border border-amber-400/20 bg-amber-400/[0.04] p-4 sm:p-5">
             <h3 className="text-sm font-semibold text-white mb-2">
               A note from your guide
@@ -146,7 +146,7 @@ export function MeetingFeedbackDialog({
             </p>
           </div>
 
-          {/* Stood out / reflect on */}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.03] p-4">
               <h3 className="text-sm font-semibold text-emerald-400 flex items-center gap-1.5 mb-3">
@@ -189,7 +189,7 @@ export function MeetingFeedbackDialog({
             </div>
           </div>
 
-          {/* Practices */}
+          
           {feedback.actionItems && feedback.actionItems.length > 0 && (
             <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 sm:p-5">
               <h3 className="text-sm font-semibold text-white flex items-center gap-1.5 mb-1">
@@ -232,7 +232,7 @@ export function MeetingFeedbackDialog({
             </div>
           )}
 
-          {/* Reading */}
+          
           {feedback.sharedResources && feedback.sharedResources.length > 0 && (
             <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
               <h3 className="text-sm font-semibold text-white flex items-center gap-1.5 mb-2.5">
@@ -256,7 +256,7 @@ export function MeetingFeedbackDialog({
             </div>
           )}
 
-          {/* Recording */}
+          
           {meeting.recordingUrl && (
             <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
@@ -278,7 +278,7 @@ export function MeetingFeedbackDialog({
           )}
         </div>
 
-        {/* Footer */}
+        
         <div className="shrink-0 p-4 sm:p-5 border-t border-white/[0.08] flex items-center justify-between gap-3">
           <p className="text-xs text-white/40">
             Come back to these practices before your next session.

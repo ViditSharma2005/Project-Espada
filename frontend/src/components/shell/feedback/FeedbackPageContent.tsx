@@ -1,7 +1,7 @@
-// src/components/shell/feedback/FeedbackPageContent.tsx — client container for
-// the Feedback page: owns state + mock data, assembles all feedback components.
-// DATA: inline mock for now — replace `mockFeedback` with an API fetch later
-// (same swap pattern as the news page).
+
+
+
+
 "use client";
 
 import { useState } from "react";
@@ -48,13 +48,13 @@ export function FeedbackPageContent() {
   const [selectedId, setSelectedId] = useState<string>(mockFeedback[0].id);
   const [formOpen, setFormOpen] = useState(false);
 
-  // Later: "mine" filters by the signed-in user; for now both tabs show the mock list.
+  
   const items = mockFeedback;
   const selected = items.find((i) => i.id === selectedId) ?? items[0];
 
   return (
     <div className="flex flex-col gap-5 p-4 sm:p-0 w-full">
-      {/* header */}
+      {}
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="mt-1 text-[13px] text-white/40">
@@ -70,7 +70,7 @@ export function FeedbackPageContent() {
         </button>
       </div>
 
-      {/* tracking section — follows the selected card */}
+      {}
       {selected && (
         <div className="flex flex-col gap-3 w-full">
           <FeedbackDetails item={selected} />
@@ -78,7 +78,7 @@ export function FeedbackPageContent() {
         </div>
       )}
 
-      {/* tabs + list */}
+      {}
       <FeedbackList
         tab={tab}
         onTabChange={setTab}

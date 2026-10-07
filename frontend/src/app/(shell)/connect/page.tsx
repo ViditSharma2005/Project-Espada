@@ -33,7 +33,7 @@ import { cn } from "@/lib/utils";
 
 type TabType = "all" | "upcoming" | "past";
 
-// Convert a directory entry into the card shape used by AssignedMentorCard
+
 const toGuide = (m: DatabaseMentor): Mentor => ({
   id: m.id,
   name: m.name,
@@ -81,13 +81,13 @@ export default function ConnectPage() {
     setTimeout(() => setToastMessage(null), 4000);
   };
 
-  // Everyone you can meet. Used to build the "Your Guides" cards.
+  
   const knownEducators = useMemo<Mentor[]>(
     () => educatorDirectory.map(toGuide),
     [educatorDirectory]
   );
 
-  // Guides appear only when a session is booked with them.
+  
   const guidesWithSessions = useMemo<Mentor[]>(() => {
     const ids: string[] = [];
     upcomingMeetings.forEach((m) => {
@@ -98,7 +98,7 @@ export default function ConnectPage() {
       const known = knownEducators.find((e) => e.id === id);
       if (known) return { ...known, status: "Meeting Scheduled" } as Mentor;
 
-      // Fallback if the educator is not in the directory
+      
       const meeting = upcomingMeetings.find((m) => m.mentorId === id)!;
       return {
         id,
@@ -144,7 +144,7 @@ export default function ConnectPage() {
 
   return (
     <div className="flex flex-col gap-6 sm:gap-8 max-w-7xl mx-auto pb-12">
-      {/* Toast */}
+      
       {toastMessage && (
         <div className="fixed top-20 right-6 z-50 bg-amber-500/95 text-black px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 text-xs font-semibold backdrop-blur-md border border-amber-300/40 animate-in fade-in slide-in-from-top-2">
           <CheckCircle2 className="size-4" />
@@ -152,7 +152,7 @@ export default function ConnectPage() {
         </div>
       )}
 
-      {/* Header */}
+      
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
@@ -200,7 +200,7 @@ export default function ConnectPage() {
         </div>
       </div>
 
-      {/* Your Guides: only educators with a booked session */}
+      
       <div>
         <div className="flex items-center justify-between mb-3.5">
           <div className="flex items-center gap-2">
@@ -247,7 +247,7 @@ export default function ConnectPage() {
         )}
       </div>
 
-      {/* Tabs */}
+      
       <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/[0.08]">
         <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
           <button
@@ -295,7 +295,7 @@ export default function ConnectPage() {
         </button>
       </div>
 
-      {/* Upcoming Sessions */}
+      
       {(activeTab === "all" || activeTab === "upcoming") && (
         <section>
           <div className="flex items-center justify-between mb-3.5">
@@ -323,7 +323,7 @@ export default function ConnectPage() {
         </section>
       )}
 
-      {/* Past Sessions */}
+      
       {(activeTab === "all" || activeTab === "past") && (
         <section>
           <div className="flex items-center justify-between mb-3.5">
@@ -345,7 +345,7 @@ export default function ConnectPage() {
         </section>
       )}
 
-      {/* Dialogs */}
+      
       <MeetingFeedbackDialog
         open={isFeedbackOpen}
         onOpenChange={setIsFeedbackOpen}

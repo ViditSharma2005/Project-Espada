@@ -1,8 +1,8 @@
-// src/components/shell/generator/GenerationStage.tsx — Section B. Three states:
-//   idle       — blank slate, nothing in the works
-//   generating — the 15s demo pipeline running inside the 9:16 frame
-//   done       — delegates to GeneratedReelCard
-// Clicking the finished reel expands ReelStagePlayer over this whole section.
+
+
+
+
+
 
 "use client";
 
@@ -29,9 +29,9 @@ export function GenerationStage({
   onCancel: () => void;
   onReset: () => void;
 }) {
-  // Which run's player is open. Tied to the result object (not a boolean)
-  // so a NEW run can never inherit an open player from the previous one —
-  // when result changes or clears, the player hides on its own.
+  
+  
+  
   const [expandedFor, setExpandedFor] = useState<GeneratedReel | null>(null);
   const playerOpen = phase === "done" && result !== null && expandedFor === result;
 
@@ -58,7 +58,7 @@ export function GenerationStage({
         )}
       </AnimatePresence>
 
-      {/* Expanded playback — covers this entire section, Explore-style. */}
+      {}
       <AnimatePresence>
         {playerOpen && result && (
           <ReelStagePlayer
@@ -123,9 +123,9 @@ function GeneratingState({
       transition={{ duration: 0.25 }}
       className="flex h-full min-h-[520px] flex-1 flex-col items-center justify-center gap-4 px-6 py-6 md:min-h-0"
     >
-      {/* The reel frame the "engine" renders into */}
+      {}
       <div className="relative aspect-[9/16] h-[380px] max-h-full shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b10] md:h-[58%]">
-        {/* moving light — gives the frame life while it renders */}
+        {}
         <motion.div
           className="absolute -left-10 top-1/4 size-44 rounded-full bg-indigo-500/20 blur-3xl"
           animate={{ x: [0, 60, 0], y: [0, 40, 0] }}
@@ -149,7 +149,7 @@ function GeneratingState({
           <X className="size-3.5" aria-hidden="true" />
         </button>
 
-        {/* dynamic status lines — short, one at a time, previous fades above */}
+        {}
         <div
           aria-live="polite"
           className="absolute inset-x-0 bottom-14 top-12 flex flex-col items-center justify-center gap-2.5 px-6 text-center"
@@ -175,7 +175,7 @@ function GeneratingState({
           </AnimatePresence>
         </div>
 
-        {/* progress */}
+        {}
         <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-4 pb-4">
           <div className="h-1 overflow-hidden rounded-full bg-white/10">
             <div

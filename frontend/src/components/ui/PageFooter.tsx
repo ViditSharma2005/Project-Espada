@@ -99,7 +99,7 @@ export const PageFooter = ({
           <div className="max-w-md">
             <div className="flex items-center gap-3">
               <Link href={logo.url} aria-label="Return home">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                
                 <img
                   src={logo.src}
                   alt={logo.alt}

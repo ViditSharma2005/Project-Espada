@@ -1,9 +1,9 @@
-// src/components/shell/generator/ReelStagePlayer.tsx — expanded playback.
-// Clicking the generated reel opens this over the whole stage (Section B):
-// the clip FITS the section (object-contain — never cropped, letterboxed on
-// black) with Explore's playback conventions — click to pause/resume, the
-// shared explore.playback mute/volume, thin progress bar, and the exact
-// quote overlaid. ESC or the close button collapses it back.
+
+
+
+
+
+
 
 "use client";
 
@@ -32,12 +32,12 @@ export function ReelStagePlayer({
   const [progress, setProgress] = useState(0);
   const { muted, volume, toggleMuted, setVolume } = usePlayback();
 
-  // First-render playback state, captured so the mount effect below can
-  // stay dependency-free (it must run exactly once).
+  
+  
   const initial = useRef({ muted, volume });
 
-  // Start right away. If the browser blocks unmuted autoplay, land on the
-  // paused state instead of a black frame — same policy as Explore's slides.
+  
+  
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -53,7 +53,7 @@ export function ReelStagePlayer({
     closeRef.current?.focus();
   }, []);
 
-  // Keep the element in sync with the shared playback store.
+  
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -61,7 +61,7 @@ export function ReelStagePlayer({
     video.muted = muted || volume === 0;
   }, [muted, volume]);
 
-  // ESC closes — but never while the user is typing in the form.
+  
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
@@ -135,7 +135,7 @@ export function ReelStagePlayer({
         </button>
       )}
 
-      {/* top bar — badges + close */}
+      
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-3 bg-gradient-to-b from-black/70 to-transparent p-3">
         <div className="flex flex-wrap gap-1.5">
           <span className={badge}>{reel.meta.lengthSec}s</span>
@@ -152,7 +152,7 @@ export function ReelStagePlayer({
         </button>
       </div>
 
-      {/* the exact quote */}
+      
       <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent px-5 pb-6 pt-16">
         <p className="max-w-md text-sm font-medium leading-snug text-white sm:text-[15px]">
           &ldquo;{reel.meta.matched.quote}&rdquo;
@@ -162,7 +162,7 @@ export function ReelStagePlayer({
         </p>
       </div>
 
-      {/* mute + volume — shared with Explore via explore.playback */}
+      
       {!failed && (
         <div
           className="absolute bottom-4 left-3 z-10 flex items-center gap-1 rounded-md bg-black/55 py-0.5 pl-0.5 pr-2"
@@ -195,7 +195,7 @@ export function ReelStagePlayer({
         </div>
       )}
 
-      {/* progress */}
+      
       {!failed && (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 bg-white/15">
           <div

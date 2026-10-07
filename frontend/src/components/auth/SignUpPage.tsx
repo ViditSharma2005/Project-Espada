@@ -326,14 +326,8 @@ export const SignUpPage = ({ className }: { className?: string }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  // Background visual animation states
-  const [initialCanvasVisible, setInitialCanvasVisible] = useState(true);
-  const [reverseCanvasVisible, setReverseCanvasVisible] = useState(false);
-
-  // Dynamic Password Strength Meter
-  const passwordStrength = useMemo(() => {
+  const [isSuccess, setIsSuccess] = useState(false);  const [initialCanvasVisible, setInitialCanvasVisible] = useState(true);
+  const [reverseCanvasVisible, setReverseCanvasVisible] = useState(false);  const passwordStrength = useMemo(() => {
     if (!password) return 0;
     let score = 0;
     if (password.length >= 8) score++;
@@ -354,10 +348,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
       return;
     }
 
-    setIsLoading(true);
-
-    // Simulate account registration
-    setTimeout(() => {
+    setIsLoading(true);    setTimeout(() => {
       setIsLoading(false);
       setReverseCanvasVisible(true);
       setTimeout(() => setInitialCanvasVisible(false), 50);
@@ -372,7 +363,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
         className
       )}
     >
-      {/* Background Canvas Effect */}
+      
       <div className="absolute inset-0 z-0 pointer-events-none">
         {initialCanvasVisible && (
           <div className="absolute inset-0">
@@ -408,7 +399,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
         <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-black via-black/40 to-transparent" />
       </div>
 
-      {/* Main Container Card */}
+      
       <div className="relative z-10 flex flex-col flex-1 items-center justify-center p-4 sm:p-6 sm:pt-25 ">
         <div className="w-full max-w-md border border-[#333] bg-[#1f1f1f57] backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/80">
           <AnimatePresence mode="wait">
@@ -421,7 +412,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                {/* Header */}
+                
                 <div className="space-y-1.5 text-center">
                   <h1 className="text-3xl font-bold tracking-tight text-white">
                     Create Account
@@ -431,7 +422,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                   </p>
                 </div>
 
-                {/* Google Sign Up */}
+                
                 <button
                   type="button"
                   className="w-full flex items-center justify-center gap-3 border border-[#333] bg-[rgba(31,31,31,0.62)] hover:border-white/50 text-gray-300 hover:text-white text-sm font-medium rounded-full py-3 px-4 transition-all duration-200 active:scale-[0.99]"
@@ -457,7 +448,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                   <span>Sign up with Google</span>
                 </button>
 
-                {/* Divider */}
+                
                 <div className="flex items-center gap-4">
                   <div className="h-px bg-white/10 flex-1" />
                   <span className="text-white/40 text-xs uppercase tracking-wider">
@@ -466,7 +457,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                   <div className="h-px bg-white/10 flex-1" />
                 </div>
 
-                {/* Form Fields */}
+                
                 <form onSubmit={handleSignUp} className="space-y-4">
                   <div className="space-y-1">
                     <label className="text-xs text-white/70 ml-1">Full Name</label>
@@ -514,7 +505,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                       required
                     />
 
-                    {/* Password Strength Indicator */}
+                    
                     {password && (
                       <div className="flex gap-1.5 pt-1 px-1">
                         {[1, 2, 3, 4].map((level) => (
@@ -548,7 +539,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                     />
                   </div>
 
-                  {/* Terms Checkbox */}
+                  
                   <div className="flex items-start gap-2 pt-1 px-1">
                     <input
                       type="checkbox"
@@ -571,7 +562,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                     </label>
                   </div>
 
-                  {/* Submit Button */}
+                  
                   <button
                     type="submit"
                     disabled={isLoading}
@@ -585,7 +576,7 @@ export const SignUpPage = ({ className }: { className?: string }) => {
                   </button>
                 </form>
 
-                {/* Switch to Sign In */}
+                
                 <div className="text-center pt-2">
                   <p className="text-xs text-white/50">
                     Already have an account?{" "}

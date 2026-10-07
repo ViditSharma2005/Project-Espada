@@ -1,5 +1,5 @@
-// Catalog for Explore, and for any later page that needs the same reels.
-// How to add one: src/app/DataFolder/README.md
+
+
 
 import raw from "./catalog.json";
 import type { Reel } from "../types";
@@ -44,7 +44,7 @@ export function reelsByUploader(uploaderId: string): Reel[] {
   return reels.filter((reel) => reel.uploader.id === uploaderId);
 }
 
-/** Path that opens this reel. Share buttons and other pages should use this. */
+
 export function reelHref(id: string): string {
   return `/explore?reel=${encodeURIComponent(id)}`;
 }

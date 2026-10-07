@@ -1,11 +1,11 @@
-// src/components/shell/feedback/FeedbackCard.tsx — one feedback entry in the list.
-// Also the home of the shared types/constants so every sibling component
-// imports from a single atom (avoids an extra types file + import cycles).
+
+
+
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FeedbackStatusBadge } from "./FeedbackStatusBadge";
 
-/* ---------- shared types ---------- */
+
 
 export const FEEDBACK_STAGES = ["submitted", "in-review", "planned", "implemented"] as const;
 export type FeedbackStatus = (typeof FEEDBACK_STAGES)[number];
@@ -34,7 +34,7 @@ export const STAGE_META: Record<FeedbackStatus, { label: string; sublabel: strin
   implemented: { label: "Implemented", sublabel: "Live on the platform" },
 };
 
-/* ---------- component ---------- */
+
 
 interface FeedbackCardProps {
   item: FeedbackItem;

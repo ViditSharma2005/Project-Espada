@@ -2,7 +2,7 @@ import { getNews, getNewsById, getNewsCount } from "../services/news.service.js"
 
 const VALID_SORTS = ["date", "relevance", "impact"];
 
-/** GET /api/news?limit=50&sort=date&category=AI%20%26%20ML&q=python */
+
 export async function listNews(req, res) {
   const limit = parseInt(req.query.limit, 10) || 50;
   const sort = VALID_SORTS.includes(req.query.sort) ? req.query.sort : "date";
@@ -17,7 +17,7 @@ export async function listNews(req, res) {
   res.json(articles);
 }
 
-/** GET /api/news/:id */
+
 export async function getNewsItem(req, res) {
   const id = Number(req.params.id);
   if (!Number.isInteger(id) || id <= 0) {
@@ -33,7 +33,7 @@ export async function getNewsItem(req, res) {
   res.json(article);
 }
 
-/** GET /health — liveness + MongoDB check + stored article count. */
+
 export async function health(_req, res) {
   try {
     const articles = await getNewsCount();

@@ -1,5 +1,5 @@
-// src/components/shell/feedback/ThankYouState.tsx — confirmation view shown
-// inside the FeedbackDialog right after a successful submit.
+
+
 import { CheckCircle2 } from "lucide-react";
 
 export function ThankYouState() {

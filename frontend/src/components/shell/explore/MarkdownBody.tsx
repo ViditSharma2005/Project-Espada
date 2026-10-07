@@ -1,4 +1,4 @@
-// src/components/shell/explore/MarkdownBody.tsx — reading pane body.
+
 import type { Inline } from "./markdown";
 import { parseMarkdown } from "./markdown";
 

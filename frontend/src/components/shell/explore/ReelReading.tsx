@@ -1,4 +1,4 @@
-// src/components/shell/explore/ReelReading.tsx — description of the current reel.
+
 import type { Reel } from "@/app/DataFolder/explore";
 import { cn } from "@/lib/utils";
 import { MarkdownBody } from "./MarkdownBody";

@@ -1,18 +1,18 @@
-// src/lib/generator.ts — the mock generation engine behind /generator.
-//
-// There is no video model here (yet). The engine does three things:
-//   1. matchQuote()       — finds the corpus quote closest to the prompt
-//   2. buildStatusLines() — short lines that run during the 15s demo pipeline
-//   3. buildGeneratedReel() — assembles an Explore-shaped Reel record, so the
-//      generated reel carries the same information (description, source,
-//      tags) that /explore shows for hand-made reels.
+
+
+
+
+
+
+
+
 
 import { corpus } from "@/app/DataFolder/generator";
 import type { QuoteEntry } from "@/app/DataFolder/generator";
 import { reels } from "@/app/DataFolder/explore";
 import type { Reel } from "@/app/DataFolder/explore";
 
-/** Hardcoded demo pipeline length. A real engine replaces this constant. */
+
 export const GENERATION_MS = 15_000;
 
 export const LENGTH_OPTIONS = [10, 20, 30] as const;
@@ -25,9 +25,9 @@ export type MatchResult = {
 };
 
 export type GeneratedReel = {
-  /** The Explore-shaped record — paste it into the catalog to publish. */
+  
   record: Reel;
-  /** Everything else the UI wants to know about the run. */
+  
   meta: {
     prompt: string;
     lengthSec: LengthSec;
@@ -35,9 +35,9 @@ export type GeneratedReel = {
     matchScore: number;
     matchedTerms: string[];
     generatedAt: string;
-    /** AI explanation shown only on the generated result. */
+    
     explanation?: string;
-    /** Prompt-specific, practical answer grounded in the selected reel. */
+    
     solution?: string;
   };
 };
@@ -63,12 +63,7 @@ function tokenize(text: string): string[] {
     .filter((token) => token.length > 2 && !STOP_WORDS.has(token));
 }
 
-/**
- * Score every corpus entry against the prompt. Exact theme hit (3) beats a
- * theme word-variant (3, via prefix match) beats the word appearing inside
- * the quote/title/work (1). Ties keep corpus order, so a given corpus makes
- * the matcher deterministic.
- */
+
 const RELATED_TERMS: Record<string, string[]> = {
   procrastination: ["focus", "purpose", "work", "action", "discipline"],
   procrastinate: ["focus", "purpose", "work", "action", "discipline"],
@@ -95,11 +90,7 @@ function relatedTokens(tokens: string[]): string[] {
   return [...new Set(tokens.flatMap((token) => RELATED_TERMS[token] ?? []))];
 }
 
-/**
- * Deterministic multi-factor fallback used when Gemini is unavailable.
- * It considers direct theme hits, phrase hits, title/quote context, and
- * intent synonyms so selection does not collapse to the first catalog row.
- */
+
 export function rankQuotes(
   prompt: string,
   entries: QuoteEntry[] = corpus
@@ -142,7 +133,7 @@ export function matchQuote(
   return rankQuotes(prompt, entries)[0] ?? { entry: entries[0], score: 0, terms: [] };
 }
 
-/** Short lines that run inside the frame while the demo pipeline "renders". */
+
 export function buildStatusLines(
   match: MatchResult,
   lengthSec: LengthSec
@@ -159,7 +150,7 @@ export function buildStatusLines(
   ];
 }
 
-/** House clip paired with this quote — the same file Explore plays. */
+
 function pairedMedia(entry: QuoteEntry, lengthSec: LengthSec): Reel["media"] {
   const fromCatalog = reels.find((reel) =>
     reel.media.src.endsWith(`/${entry.mediaId}.mp4`)
@@ -174,11 +165,7 @@ function pairedMedia(entry: QuoteEntry, lengthSec: LengthSec): Reel["media"] {
   };
 }
 
-/**
- * Assemble the generated reel: an Explore-shaped record plus run metadata.
- * The record is deliberately identical in shape to a catalog row, so the
- * copy-to-catalog flow on the result card makes the reel real.
- */
+
 export function buildGeneratedReel(
   match: MatchResult,
   prompt: string,

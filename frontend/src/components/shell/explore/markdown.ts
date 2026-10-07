@@ -1,4 +1,4 @@
-// A small markdown subset for reel descriptions. No raw HTML.
+
 
 export type Inline =
   | { type: "text"; value: string }

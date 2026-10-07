@@ -1,5 +1,5 @@
-// src/components/shell/feedback/FeedbackStatusBadge.tsx — status badge.
-// Monochrome base; semantic colors only as muted tints (status semantics).
+
+
 import { cn } from "@/lib/utils";
 import type { FeedbackStatus } from "./FeedbackCard";
 import { STAGE_META } from "./FeedbackCard";

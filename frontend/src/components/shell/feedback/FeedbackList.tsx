@@ -1,4 +1,4 @@
-// src/components/shell/feedback/FeedbackList.tsx — My/All tabs + the card list.
+
 import { cn } from "@/lib/utils";
 import type { FeedbackItem } from "./FeedbackCard";
 import { FeedbackCard } from "./FeedbackCard";

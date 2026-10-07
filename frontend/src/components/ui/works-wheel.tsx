@@ -139,9 +139,7 @@ export function WorksWheel({
       }
 
       for (let i = 0; i < count; i++) {
-        const d = i - pos;
-        // Negative angles reverse both the opening ring and the vertical drum.
-        const drumDeg = -d * STEP;
+        const d = i - pos;        const drumDeg = -d * STEP;
         const card = cardRefs.current[i];
         if (card) {
           card.style.transform = place(
@@ -256,7 +254,7 @@ export function WorksWheel({
             } as const;
             const face = (
               <span className="relative block size-full overflow-hidden rounded-xl bg-neutral-900 shadow-[0_22px_55px_-20px_rgba(249,115,22,0.38)] ring-1 ring-white/10">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                
                 <img
                   src={item.image}
                   alt={item.title}

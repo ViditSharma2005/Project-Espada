@@ -45,9 +45,7 @@ export default function signinLayout({
             ],
           },
         ]}
-        socialLinks={[
-          // adjust hrefs to your real socials once you have them
-        ]}
+        socialLinks={[        ]}
         copyright={`© 2026 ${PROJECT_NAME}. All rights reserved.`}
       />
     </>

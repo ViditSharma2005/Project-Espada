@@ -21,7 +21,7 @@ function useCountUp(target: number, durationMs = 900) {
 
           const tick = (now: number) => {
             const progress = Math.min((now - start) / durationMs, 1);
-            // ease-out cubic
+            
             const eased = 1 - Math.pow(1 - progress, 3);
             setValue(Math.round(eased * target));
             if (progress < 1) requestAnimationFrame(tick);
@@ -127,7 +127,7 @@ export function TopContributorsList({
       <span className="w-5 shrink-0 text-sm font-medium text-[var(--muted-foreground)]">
         {rank}
       </span>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
+      
       <img
         src={contributor.avatarUrl}
         alt={`${contributor.login}'s avatar`}
@@ -192,7 +192,7 @@ export function ContributorGrid({
             className="group relative animate-[fadeInScale_.4s_ease_forwards] opacity-0"
             style={{ animationDelay: `${Math.min(i * 15, 900)}ms` }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+            
             <img
               src={c.avatarUrl}
               alt={`${c.login}'s avatar`}

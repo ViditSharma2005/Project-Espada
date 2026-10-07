@@ -1,11 +1,11 @@
-// app/terms/page.jsx
-//
-// Drop this file into: app/terms/page.jsx (Next.js App Router)
-// Requires Tailwind's dark mode set to "class" in tailwind.config.js:
-//   module.exports = { darkMode: "class", ... }
-//
-// Matches the layout/format of the privacy-policy route: sticky sidebar
-// table of contents, stone/neutral palette, light + dark mode support.
+
+
+
+
+
+
+
+
 
 import { PROJECT_NAME } from "@/lib/site-config";
 
@@ -19,7 +19,7 @@ const MAILING_ADDRESS_LINES = [
 ];
 const LAST_UPDATED = "September 10, 2026";
 
-// ---- SEO metadata (Next.js App Router convention) ----
+
 export const metadata = {
   title: `Terms and Conditions | ${COMPANY_NAME}`,
   description: `Read the Terms and Conditions for ${COMPANY_NAME}. Last updated ${LAST_UPDATED}.`,
@@ -94,14 +94,12 @@ export default function TermsAndConditionsPage() {
   return (
     <>
       <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
+        type="application/ld+json"        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
       />
 
       <div className="min-h-screen bg-stone-50 text-stone-800 dark:bg-neutral-950 dark:text-stone-200">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-[260px_1fr] md:px-10">
-          {/* Sidebar / table of contents */}
+          
           <nav
             aria-label="Table of contents"
             className="order-2 h-max md:sticky md:top-14 md:order-1"
@@ -123,7 +121,7 @@ export default function TermsAndConditionsPage() {
             </ul>
           </nav>
 
-          {/* Main content */}
+          
           <main className="order-1 min-w-0 md:order-2">
             <header className="mb-10 border-b border-stone-200 pb-8 dark:border-neutral-800">
               <h1 className="text-3xl font-semibold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl">

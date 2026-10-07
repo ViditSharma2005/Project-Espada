@@ -1,10 +1,10 @@
-// Corpus for the Reel Generator — the exact quotes the engine matches
-// prompts against.
-//
-// quotes.json is a SEED built from the Explore catalog (DataFolder/explore/
-// reels/catalog.json) so the demo works out of the box. Grow it with the
-// prompt in this folder's README.md — the page picks up the new file
-// automatically.
+
+
+
+
+
+
+
 
 import raw from "./quotes.json";
 import type { QuoteEntry, QuoteMediaId } from "./types";
@@ -44,8 +44,8 @@ function isQuoteEntry(value: unknown): value is QuoteEntry {
 const rows = raw as unknown[];
 const valid = rows.filter(isQuoteEntry);
 
-// A hand-edited quotes.json must never take the page down mid-demo —
-// invalid rows are dropped with a warning instead of crashing.
+
+
 if (process.env.NODE_ENV !== "production" && valid.length < rows.length) {
   console.warn(
     `[generator] dropped ${rows.length - valid.length} invalid quotes.json row(s)`

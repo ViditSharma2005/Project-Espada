@@ -324,23 +324,14 @@ export const SignInPage = ({ className }: { className?: string }) => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  // OTP flow state
-  const [step, setStep] = useState<"form" | "code" | "success">("form");
+  const [isLoading, setIsLoading] = useState(false);  const [step, setStep] = useState<"form" | "code" | "success">("form");
   const [code, setCode] = useState(["", "", "", "", "", ""]);
-  const codeInputRefs = useRef<(HTMLInputElement | null)[]>([]);
-
-  // Canvas visual effects state
-  const [initialCanvasVisible, setInitialCanvasVisible] = useState(true);
+  const codeInputRefs = useRef<(HTMLInputElement | null)[]>([]);  const [initialCanvasVisible, setInitialCanvasVisible] = useState(true);
   const [reverseCanvasVisible, setReverseCanvasVisible] = useState(false);
 
   const handlePasswordSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-
-    // Simulate authentication API call
-    setTimeout(() => {
+    setIsLoading(true);    setTimeout(() => {
       setIsLoading(false);
       setReverseCanvasVisible(true);
       setTimeout(() => setInitialCanvasVisible(false), 50);
@@ -400,7 +391,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
         className
       )}
     >
-      {/* Canvas Shader Background */}
+      
       <div className="absolute inset-0 z-0 pointer-events-none">
         {initialCanvasVisible && (
           <div className="absolute inset-0">
@@ -438,7 +429,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
         <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-black via-black/40 to-transparent" />
       </div>
 
-      {/* Main Content Card Container */}
+      
       <div className="relative z-10 flex flex-col flex-1 items-center justify-center p-4 sm:p-6 sm:pt-25 ">
         <div className="w-full max-w-md border border-[#333] bg-[#1f1f1f57] backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/80">
           <AnimatePresence mode="wait">
@@ -451,7 +442,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                {/* Header */}
+                
                 <div className="space-y-1.5 text-center">
                   <h1 className="text-3xl font-bold tracking-tight text-white">
                     Sign In
@@ -461,7 +452,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
                   </p>
                 </div>
 
-                {/* Social Login Button */}
+                
                 <button
                   type="button"
                   className="w-full flex items-center justify-center gap-3 bg-[rgba(31,31,31,0.62)] hover:bg-white/10 text-white text-sm font-medium border border-[#333] hover:border-white/50 rounded-full py-3 px-4 transition-all duration-200 active:scale-[0.99]"
@@ -487,7 +478,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
                   <span>Continue with Google</span>
                 </button>
 
-                {/* Divider */}
+                
                 <div className="flex items-center gap-4">
                   <div className="h-px bg-white/10 flex-1" />
                   <span className="text-white/40 text-xs uppercase tracking-wider">
@@ -496,7 +487,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
                   <div className="h-px bg-white/10 flex-1" />
                 </div>
 
-                {/* Authentication Method Switcher */}
+                
                 <div className="grid grid-cols-2 p-1 bg-[rgba(31,31,31,0.62)] rounded-full border border-[#333]">
                   <button
                     type="button"
@@ -524,7 +515,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
                   </button>
                 </div>
 
-                {/* Forms */}
+                
                 {authMethod === "password" ? (
                   <form onSubmit={handlePasswordSignIn} className="space-y-4">
                     <div className="space-y-1">
@@ -621,7 +612,7 @@ export const SignInPage = ({ className }: { className?: string }) => {
                   </form>
                 )}
 
-                {/* Switch to Sign Up */}
+                
                 <div className="text-center pt-2">
                   <p className="text-xs text-white/50">
                     Don't have an account?{" "}

@@ -150,9 +150,7 @@ export function ReelStage({
           >
             <ChevronUp className="size-5" />
           </button>
-          {/* <p className="text-[11px] tabular-nums text-muted-foreground">
-            {index + 1}/{reels.length}
-          </p> */}
+          {}
           <button
             type="button"
             className={iconButton}

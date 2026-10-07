@@ -1,11 +1,11 @@
-// app/privacy-policy/page.jsx
-//
-// Drop this file into: app/privacy-policy/page.jsx (Next.js App Router)
-// Requires Tailwind's dark mode set to "class" in tailwind.config.js:
-//   module.exports = { darkMode: "class", ... }
-//
-// Fill in the bracketed placeholders (company name, address, contact email,
-// server location, effective date) before publishing.
+
+
+
+
+
+
+
+
 
 import { PROJECT_NAME } from "@/lib/site-config";
 
@@ -15,10 +15,7 @@ const SITE_URL = "https://www.backspaces.com";
 const CONTACT_EMAIL = "privacy@example.com";
 const MAILING_ADDRESS = "None";
 const LAST_UPDATED = "September 11, 2026";
-const SERVER_LOCATION = "Greater Noida";
-
-// ---- SEO metadata (Next.js App Router convention) ----
-export const metadata = {
+const SERVER_LOCATION = "Greater Noida";export const metadata = {
   title: `Privacy Policy | ${COMPANY_NAME}`,
   description: `Read ${COMPANY_NAME}'s Privacy Policy to learn what personal information we collect, how we use and share it, and the privacy rights and choices available to you.`,
   alternates: {
@@ -77,14 +74,12 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
+        type="application/ld+json"        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
       />
 
       <div className="min-h-screen bg-stone-50 text-stone-800 dark:bg-neutral-950 dark:text-stone-200">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-[240px_1fr] md:px-10">
-          {/* Sidebar / table of contents */}
+          
           <nav
             aria-label="Table of contents"
             className="order-2 h-max md:sticky md:top-14 md:order-1"
@@ -106,7 +101,7 @@ export default function PrivacyPolicyPage() {
             </ul>
           </nav>
 
-          {/* Main content */}
+          
           <main className="order-1 min-w-0 md:order-2">
             <header className="mb-10 border-b border-stone-200 pb-8 dark:border-neutral-800">
               <h1 className="text-3xl font-semibold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl">

@@ -1,4 +1,4 @@
-// src/components/shell/DashboardShell.tsx
+
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -71,7 +71,7 @@ export function DashboardShell({
   const getPageTitle = () => {
     const match = navItems.find((item) => item.href === pathname);
     if (match) return match.label;
-    // fallback: capitalize the last segment of the path
+    
     const segment = pathname.split("/").filter(Boolean).pop();
     return segment ? segment.charAt(0).toUpperCase() + segment.slice(1) : "Dashboard";
   };
@@ -131,7 +131,7 @@ export function DashboardShell({
 
   return (
     <div className="flex h-screen w-full overflow-hidden bg-background text-foreground">
-      {/* LEFT SIDEBAR */}
+      {}
       <aside
         className={cn(
           "hidden lg:flex lg:w-[15%] flex-col h-full shrink-0",
@@ -139,16 +139,16 @@ export function DashboardShell({
           "border-r"
         )}
       >
-        {/* Top 10% - company name */}
+        {}
         <div className="h-[7.55%] flex items-center px-5 border-b border-white/10">
           <Link href="/" className="flex items-center gap-2">
             <ArrowLeft className="size-6 hover:text-blue-400 transition-colors duration-300" />
-            {/* <Image src="/logo.svg" alt={companyName} width={28} height={28} className="rounded-full" /> */}
+            {}
             <span className="font-semibold text-lg tracking-tight">{companyName}</span>
           </Link>
         </div>
 
-        {/* Middle 80% - nav links */}
+        {}
         <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
           {navItems.map((item) => (
             <Link
@@ -162,7 +162,7 @@ export function DashboardShell({
           ))}
         </nav>
 
-        {/* Bottom 10% - user profile */}
+        {}
         <div className="h-[10%] min-h-[64px] flex items-center justify-between px-4 border-t border-white/10">
           <div className="flex items-center gap-2 min-w-0">
             <Image
@@ -180,7 +180,7 @@ export function DashboardShell({
         </div>
       </aside>
 
-      {/* MOBILE SIDEBAR DRAWER */}
+      {}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div
@@ -226,9 +226,9 @@ export function DashboardShell({
         </div>
       )}
 
-      {/* MAIN SECTION */}
+      {}
       <main className="flex-1 min-w-0 h-full flex flex-col overflow-hidden">
-        {/* Top navbar inside main */}
+        {}
         <div
           className={cn(
             "h-14 shrink-0 flex items-center justify-between px-4 border-b border-white/10",
@@ -264,11 +264,11 @@ export function DashboardShell({
           </button>
         </div>
 
-        {/* Variable main content */}
+        {}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6">{children}</div>
       </main>
 
-      {/* NOTIFICATION DRAWER */}
+      {}
       <div
         className={cn(
           "pointer-events-none fixed inset-0 z-[60]",

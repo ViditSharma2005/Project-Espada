@@ -1,4 +1,4 @@
-// Catalog for the Article page. How to add one: ./README.md
+
 
 import raw from "./catalog.json";
 import type { Article, ArticleAuthor, ArticlePerson } from "./types";

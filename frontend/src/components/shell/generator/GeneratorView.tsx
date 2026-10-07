@@ -1,7 +1,7 @@
-// src/components/shell/generator/GeneratorView.tsx — the /generator page.
-// Section A (60%): quick starts + the prompt form.
-// Section B (40%): the stage — blank until a run starts, plays the 15s demo
-// pipeline, then shows the reel and the Explore record it maps to.
+
+
+
+
 
 "use client";
 
@@ -39,7 +39,7 @@ export function GeneratorView() {
     if (trimmed && corpus.length > 0) start(trimmed, lengthSec);
   };
 
-  /** Quick starts generate immediately — no submit needed. */
+  
   const quickStart = (text: string) => {
     setPrompt(text);
     if (corpus.length > 0) start(text, lengthSec);
@@ -47,7 +47,7 @@ export function GeneratorView() {
 
   return (
     <div className="flex h-full min-h-0 flex-1 flex-col bg-background md:flex-row">
-      {/* SECTION A — builder */}
+      {}
       <section
         aria-label="Reel builder"
         className="flex flex-col gap-6 border-white/10 p-4 sm:p-6 md:w-[60%] md:min-h-0 md:overflow-y-auto md:border-r lg:p-8"
@@ -106,7 +106,7 @@ export function GeneratorView() {
         </div>
       </section>
 
-      {/* SECTION B — stage */}
+      {}
       <section
         aria-label="Generation stage"
         className="flex min-h-0 flex-col md:w-[40%]"

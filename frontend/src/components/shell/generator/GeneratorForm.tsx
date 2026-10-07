@@ -1,5 +1,5 @@
-// src/components/shell/generator/GeneratorForm.tsx — Section A's form:
-// quick starts (they float above the box), prompt, reel length, submit.
+
+
 
 "use client";
 
@@ -23,7 +23,7 @@ export function GeneratorForm({
   onLengthChange: (value: LengthSec) => void;
   isGenerating: boolean;
   onSubmit: () => void;
-  /** Quick starts generate immediately — no submit needed. */
+  
   onQuickStart: (prompt: string) => void;
 }) {
   const canSubmit = prompt.trim().length > 0 && !isGenerating;

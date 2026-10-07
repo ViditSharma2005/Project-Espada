@@ -4,8 +4,8 @@ import React from "react";
 import { Star, Calendar, MessageCircleQuestion, CalendarPlus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// The type keeps its old name so the other connect components keep working.
-// In the UI, a "Mentor" is now an educator / guide.
+
+
 export interface Mentor {
   id: string;
   name: string;
@@ -38,7 +38,7 @@ export function AssignedMentorCard({
 }: AssignedMentorCardProps) {
   const hasSession = mentor.status === "Meeting Scheduled";
 
-  // Short label shown at the top of the card
+  
   const badgeLabel = hasSession
     ? "Session booked"
     : mentor.status || "Educator";
@@ -52,7 +52,7 @@ export function AssignedMentorCard({
           : "border-white/10 bg-white/5 hover:bg-white/[0.07]"
       )}
     >
-      {/* Status badge */}
+      {}
       <div className="mb-5">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] text-amber-200 border border-amber-400/30 bg-amber-400/5">
           <span
@@ -65,9 +65,9 @@ export function AssignedMentorCard({
         </span>
       </div>
 
-      {/* Educator info */}
+      {}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {}
         <img
           src={mentor.avatar}
           alt={mentor.name}
@@ -107,14 +107,14 @@ export function AssignedMentorCard({
         </div>
       </div>
 
-      {/* Short introduction */}
+      {}
       {mentor.bio && (
         <p className="mt-4 text-xs text-white/50 leading-relaxed line-clamp-2">
           {mentor.bio}
         </p>
       )}
 
-      {/* Areas of guidance */}
+      {}
       <div className="mt-4 pt-4 border-t border-white/[0.08]">
         <p className="text-[11px] text-white/40 font-medium mb-2">
           You can ask about
@@ -131,7 +131,7 @@ export function AssignedMentorCard({
         </div>
       </div>
 
-      {/* Actions */}
+      {}
       <div className="mt-5 flex items-center gap-2.5">
         {onQuickDoubt && (
           <button

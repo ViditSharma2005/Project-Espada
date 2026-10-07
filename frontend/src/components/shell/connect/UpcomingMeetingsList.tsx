@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// The type keeps its old name so the page and dialogs keep working.
+
 export interface UpcomingMeeting {
   id: string;
   mentorId: string;
@@ -52,7 +52,7 @@ export function UpcomingMeetingsList({
       setCopiedId(id);
       setTimeout(() => setCopiedId(null), 2000);
     } catch {
-      // Clipboard can be blocked by the browser; fail quietly
+      
     }
   };
 
@@ -93,7 +93,7 @@ export function UpcomingMeetingsList({
             key={meeting.id}
             className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5 hover:bg-white/[0.07] transition-colors flex flex-col gap-4"
           >
-            {/* Top row */}
+            {}
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2.5">
                 <span
@@ -129,10 +129,10 @@ export function UpcomingMeetingsList({
               </div>
             </div>
 
-            {/* Session info */}
+            {}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-start gap-3.5 flex-1 min-w-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                {}
                 <img
                   src={meeting.mentorAvatar}
                   alt={meeting.mentorName}
@@ -181,7 +181,7 @@ export function UpcomingMeetingsList({
                 </div>
               </div>
 
-              {/* Actions */}
+              {}
               <div className="flex flex-col sm:items-end gap-2 shrink-0 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-white/[0.08]">
                 <a
                   href={meeting.zoomUrl}

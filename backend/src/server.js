@@ -16,10 +16,7 @@ async function start() {
     console.log(`[server] Health check     → http://localhost:${env.port}/health`);
     console.log(`[server] News feed        → http://localhost:${env.port}/api/news`);
   });
-}
-
-// Clean shutdown on Ctrl+C (and deploy stop signals).
-for (const signal of ["SIGINT", "SIGTERM"]) {
+}for (const signal of ["SIGINT", "SIGTERM"]) {
   process.on(signal, async () => {
     console.log(`[server] ${signal} received — closing MongoDB connection...`);
     await closeDb();

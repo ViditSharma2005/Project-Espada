@@ -9,9 +9,9 @@ import {
   Leaf,
 } from "lucide-react";
 
-// Type names are kept so the page and dialogs keep working.
+
 export interface PastMeetingFeedback {
-  // Kept for compatibility. Scores are no longer shown in the list.
+  
   overallScore?: number;
   summary: string;
   strengths: string[];
@@ -82,7 +82,7 @@ export function PastMeetingsList({
             }}
             className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5 hover:bg-white/[0.08] hover:border-amber-400/30 transition-colors cursor-pointer flex flex-col justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60"
           >
-            {/* Top */}
+            
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
                 <span className="inline-flex items-center gap-1.5 text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
@@ -102,9 +102,9 @@ export function PastMeetingsList({
                 {meeting.title}
               </h4>
 
-              {/* Educator */}
+              
               <div className="flex items-center gap-2 mt-2.5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                
                 <img
                   src={meeting.mentorAvatar}
                   alt={meeting.mentorName}
@@ -118,13 +118,13 @@ export function PastMeetingsList({
                 </span>
               </div>
 
-              {/* Excerpt */}
+              
               <p className="text-xs text-white/60 mt-3 line-clamp-3 leading-relaxed bg-white/[0.02] border border-white/[0.05] p-2.5 rounded-xl">
                 {meeting.feedback.summary}
               </p>
             </div>
 
-            {/* Bottom */}
+            
             <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between">
               <span className="inline-flex items-center gap-1.5 text-xs text-white/50">
                 <Leaf className="size-3.5 text-emerald-400" />

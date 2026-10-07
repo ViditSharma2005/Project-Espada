@@ -47,7 +47,7 @@ const TIME_SLOTS = [
   "9:00 PM – 9:45 PM IST",
 ];
 
-// Builds the next three days from today, so dates never go stale
+
 function getAvailableDays() {
   const days: { label: string; dateStr: string }[] = [];
   for (let i = 1; i <= 3; i++) {
@@ -85,7 +85,7 @@ export function ScheduleMeetingDialog({
   const [agenda, setAgenda] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const availableDays = useMemo(() => getAvailableDays(), [open]); // eslint-disable-line react-hooks/exhaustive-deps
+  const availableDays = useMemo(() => getAvailableDays(), [open]);
 
   useEffect(() => {
     if (open) {
@@ -111,11 +111,8 @@ export function ScheduleMeetingDialog({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Placeholder link until a real video provider is connected
-    const randomMeetingId = Math.floor(10000000000 + Math.random() * 90000000000);
-    const meetingUrl = `https://zoom.us/j/${randomMeetingId}?pwd=samvad_${Math.random()
+    setIsSubmitting(true);    const randomMeetingId = Math.floor(10000000000 + Math.random() * 90000000000);
+    const meetingUrl = `https://zoom.us/j/${randomMeetingId}?pwd=${Math.random()
       .toString(36)
       .substring(2, 8)}`;
 
@@ -172,7 +169,7 @@ export function ScheduleMeetingDialog({
       >
         <div className="absolute inset-0 rounded-none sm:rounded-[24px] bg-gradient-to-b from-amber-400/[0.1] to-transparent pointer-events-none h-[30%]" />
 
-        {/* Header */}
+        
         <div className="relative shrink-0 p-6 sm:p-7 pb-4 border-b border-white/[0.08]">
           <button
             onClick={() => onOpenChange(false)}
@@ -195,12 +192,12 @@ export function ScheduleMeetingDialog({
           </p>
         </div>
 
-        {/* Form */}
+        
         <form
           onSubmit={handleSubmit}
           className="relative flex-1 overflow-y-auto p-6 sm:p-7 space-y-6 custom-scrollbar"
         >
-          {/* Session type */}
+          
           <div>
             <p className="text-sm font-semibold text-white mb-2">
               What kind of session would help?
@@ -232,7 +229,7 @@ export function ScheduleMeetingDialog({
             </div>
           </div>
 
-          {/* Day and time */}
+          
           <div>
             <p className="text-sm font-semibold text-white mb-2">
               Choose a day and time
@@ -275,7 +272,7 @@ export function ScheduleMeetingDialog({
             </div>
           </div>
 
-          {/* What is on your mind */}
+          
           <div>
             <p className="text-sm font-semibold text-white mb-2">
               What is on your mind?
@@ -303,7 +300,7 @@ export function ScheduleMeetingDialog({
             </div>
           </div>
 
-          {/* Notice */}
+          
           <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white/70 flex items-start gap-2.5">
             <Lock className="size-4 text-amber-400 mt-0.5 shrink-0" />
             <div>

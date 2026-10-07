@@ -1,5 +1,5 @@
-// src/components/shell/feedback/FeedbackDetails.tsx — compact "now tracking"
-// strip for the selected feedback item, rendered above the progress tracker.
+
+
 import type { FeedbackItem } from "./FeedbackCard";
 import { FeedbackStatusBadge } from "./FeedbackStatusBadge";
 

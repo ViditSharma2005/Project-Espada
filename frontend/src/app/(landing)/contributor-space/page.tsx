@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Revalidate the whole page hourly (ISR) — keeps the page statically served
-// and crawlable, while staying reasonably fresh.
+
+
 export const revalidate = 3600;
 
 export default async function ContributorSpacePage() {
@@ -68,11 +68,9 @@ export default async function ContributorSpacePage() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:mt-20 lg:px-8">
-      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+      
       <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        type="application/ld+json"        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <header className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

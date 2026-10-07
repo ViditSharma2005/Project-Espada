@@ -1,6 +1,6 @@
-// lib/github.ts
-// Server-only. Never import this from a "use client" file —
-// it uses process.env.GITHUB_TOKEN which must stay off the client bundle.
+
+
+
 
 const GITHUB_API = "https://api.github.com";
 
@@ -9,7 +9,7 @@ const REPO = process.env.GITHUB_REPO as string;
 const TOKEN = process.env.GITHUB_TOKEN as string;
 
 if (!OWNER || !REPO || !TOKEN) {
-  // Fails loudly at build/request time instead of silently returning empty data.
+  
   console.warn(
     "[github.ts] Missing GITHUB_OWNER, GITHUB_REPO, or GITHUB_TOKEN env vars."
   );
@@ -19,17 +19,13 @@ const headers = {
   Authorization: `Bearer ${TOKEN}`,
   Accept: "application/vnd.github+json",
   "X-GitHub-Api-Version": "2022-11-28",
-};
-
-// Revalidate every hour. Contributor stats don't need to be live-live,
-// and this keeps you comfortably inside GitHub's rate limits.
-const REVALIDATE_SECONDS = 60 * 60;
+};const REVALIDATE_SECONDS = 60 * 60;
 
 export type Contributor = {
   login: string;
   avatarUrl: string;
   profileUrl: string;
-  contributions: number; // commit count, from the /contributors endpoint
+  contributions: number;
 };
 
 export type ContributorWithPRs = Contributor & {
@@ -58,10 +54,7 @@ async function githubFetch(path: string) {
   return res.json();
 }
 
-/**
- * All contributors, ranked by commit count.
- * Used for: total contributor count + the avatar wall.
- */
+
 export async function getContributors(): Promise<Contributor[]> {
   const results: Contributor[] = [];
   let page = 1;
@@ -74,7 +67,7 @@ export async function getContributors(): Promise<Contributor[]> {
     if (!Array.isArray(data) || data.length === 0) break;
 
     for (const c of data) {
-      if (!c.login) continue; // skip anonymous entries
+      if (!c.login) continue;
       results.push({
         login: c.login,
         avatarUrl: c.avatar_url,
@@ -85,16 +78,13 @@ export async function getContributors(): Promise<Contributor[]> {
 
     if (data.length < 100) break;
     page += 1;
-    if (page > 10) break; // safety cap: 1000 contributors is plenty
+    if (page > 10) break;
   }
 
   return results;
 }
 
-/**
- * Opened + merged PR counts using the Search API,
- * which returns total_count without pagination.
- */
+
 export async function getPullRequestStats(): Promise<RepoStats> {
   const [openedRes, mergedRes] = await Promise.all([
     githubFetch(
@@ -114,16 +104,11 @@ export async function getPullRequestStats(): Promise<RepoStats> {
   };
 }
 
-/**
- * Top contributors ranked by PRs merged (not commits).
- * Paginates merged PRs and tallies by author.
- * Capped at ~500 most recent merged PRs to keep this fast and
- * inside rate limits — raise MAX_PAGES if your repo needs deeper history.
- */
+
 export async function getTopContributorsByMergedPRs(
   limit = 10
 ): Promise<ContributorWithPRs[]> {
-  const MAX_PAGES = 5; // 5 x 100 = 500 merged PRs
+  const MAX_PAGES = 5;
   const tally = new Map<string, { avatarUrl: string; profileUrl: string; count: number }>();
 
   for (let page = 1; page <= MAX_PAGES; page++) {

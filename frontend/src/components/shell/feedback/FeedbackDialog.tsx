@@ -1,7 +1,7 @@
-// src/components/shell/feedback/FeedbackDialog.tsx — "Give Feedback" modal.
-// Pattern mirrors NewsDialog (portal, backdrop blur, Esc close, bottom-sheet on
-// mobile). After submit it briefly shows <ThankYouState /> and closes itself.
-// Submission is a stub (console.log) until feedback gets a real API.
+
+
+
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ export function FeedbackDialog({ open, onOpenChange }: FeedbackDialogProps) {
     return () => window.removeEventListener("keydown", onEsc);
   }, [open, onOpenChange]);
 
-  // reset the form each time the dialog opens
+  
   useEffect(() => {
     if (open) setSubmitted(false);
   }, [open]);
@@ -51,7 +51,7 @@ export function FeedbackDialog({ open, onOpenChange }: FeedbackDialogProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: replace with POST /api/feedback when the backend route exists
+    
     console.log({ type, title, description });
     setSubmitted(true);
     setTimeout(() => onOpenChange(false), 1600);

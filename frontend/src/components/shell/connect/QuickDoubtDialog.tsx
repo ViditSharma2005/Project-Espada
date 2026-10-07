@@ -9,8 +9,8 @@ interface QuickDoubtDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   mentor: Mentor | null;
-  // The prop name is kept so the page does not need to change.
-  // codeLink is no longer collected and is always undefined.
+  
+  
   onSubmitDoubt: (doubt: {
     mentorName: string;
     question: string;
@@ -91,7 +91,7 @@ export function QuickDoubtDialog({
       >
         <div className="absolute inset-x-0 top-0 h-24 rounded-t-[24px] bg-gradient-to-b from-amber-400/[0.08] to-transparent pointer-events-none" />
 
-        {/* Header */}
+        
         <div className="relative shrink-0 p-6 pb-4 border-b border-white/[0.08]">
           <button
             onClick={() => onOpenChange(false)}

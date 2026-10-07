@@ -1,13 +1,13 @@
-// src/app/api/news/route.ts — proxy to the configured News API (Render)
-//
-// The browser calls this route (relative URL → works on prod, previews, and
-// localhost); the Next.js server forwards whitelisted query params to the
-// real backend. The backend URL stays server-side in API_URL.
+
+
+
+
+
 
 import { NextRequest, NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic"; // never serve a cached response
-export const maxDuration = 60; // survive a Render free-tier cold start
+export const dynamic = "force-dynamic"; 
+export const maxDuration = 60; 
 
 const API_URL = process.env.API_URL;
 const ALLOWED_PARAMS = ["q", "sort", "category", "limit"] as const;

@@ -1,6 +1,6 @@
-// src/components/shell/feedback/FeedbackProgress.tsx — compact 4-stage tracker.
-// Monochrome: completed = white node + black check, current = white ring + dot,
-// upcoming = faint ring. Follows the selected feedback card.
+
+
+
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { FeedbackStatus } from "./FeedbackCard";
@@ -11,7 +11,7 @@ interface FeedbackProgressProps {
   date: string;
 }
 
-const NODE_W = 80; // px — node column width; line insets align to node centers
+const NODE_W = 80; 
 
 export function FeedbackProgress({ status, date }: FeedbackProgressProps) {
   const current = FEEDBACK_STAGES.indexOf(status);
@@ -19,7 +19,7 @@ export function FeedbackProgress({ status, date }: FeedbackProgressProps) {
 
   return (
     <div className="relative flex justify-between max-w-2xl pt-0.5">
-      {/* connecting line */}
+      {}
       <div className="absolute top-[13px] h-px bg-white/10" style={{ left: NODE_W / 2, right: NODE_W / 2 }} />
       <div
         className="absolute top-[13px] h-px bg-white/50 transition-all duration-500"

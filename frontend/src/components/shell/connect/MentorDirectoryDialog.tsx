@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import type { Mentor } from "./AssignedMentorCard";
 
-// Names are kept so the page and other components keep working.
-// In the UI, every "mentor" is now an educator.
+
+
 export interface DatabaseMentor {
   id: string;
   name: string;
@@ -35,7 +35,7 @@ interface MentorDirectoryDialogProps {
   onSelectMentorToBook: (mentor: Mentor) => void;
 }
 
-// Each filter matches any tag that starts a word with one of its keywords
+
 const CATEGORIES: { label: string; keywords: string[] }[] = [
   { label: "All", keywords: [] },
   {
@@ -164,7 +164,7 @@ export function MentorDirectoryDialog({
       >
         <div className="absolute inset-0 rounded-none sm:rounded-[24px] bg-gradient-to-b from-amber-400/[0.08] to-transparent pointer-events-none h-[25%]" />
 
-        {/* Header */}
+        
         <div className="relative shrink-0 p-6 sm:p-7 pb-4 border-b border-white/[0.08]">
           <button
             onClick={() => onOpenChange(false)}
@@ -210,7 +210,7 @@ export function MentorDirectoryDialog({
           </div>
         </div>
 
-        {/* Educators list */}
+        
         <div className="relative flex-1 overflow-y-auto p-6 sm:p-7 space-y-4 custom-scrollbar">
           {filteredEducators.length === 0 ? (
             <div className="py-12 text-center">
@@ -233,7 +233,7 @@ export function MentorDirectoryDialog({
               >
                 <div className="flex items-start gap-4 flex-1 min-w-0">
                   <div className="relative shrink-0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    
                     <img
                       src={m.avatar}
                       alt={m.name}

@@ -1,6 +1,6 @@
-// src/components/shell/generator/PromptChips.tsx — predefined quick starts.
-// They float above the prompt box; clicking one starts generation immediately
-// (GeneratorView handles that — the chip just hands its prompt up).
+
+
+
 
 "use client";
 
