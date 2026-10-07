@@ -25,3 +25,7 @@ Next will not serve a file out of `src`. Covers have to live under `public`.
 The quoted line should be his. The prose around it is the archive's. Do not invent a lecture title or a page number you have not checked.
 
 To point a reel back at an article, set `articleId` on that reel. The Article page does not read that field. It uses `reelId` on the article.
+
+## Community submissions
+
+The Article page also includes a **Submit article** flow. Submitted articles are validated in the browser and stored under `samvad.user-articles` in `localStorage`, so they appear immediately and survive refreshes on that device. They intentionally do not mutate `catalog.json` or the server filesystem. For multi-user persistence, moderation, and cross-device access, replace this storage adapter with an authenticated database/API while keeping the same `Article` shape.

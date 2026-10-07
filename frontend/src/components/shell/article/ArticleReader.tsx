@@ -27,10 +27,12 @@ export function ArticleReader({ article, related, onBack, onCreateReel }: Articl
           <ArrowLeft className="size-4" aria-hidden="true" />
           Back
         </button>
-        <button type="button" onClick={onCreateReel} className={actionButton}>
-          <Clapperboard className="size-4" aria-hidden="true" />
-          Create reel
-        </button>
+        {article.reelId && (
+          <button type="button" onClick={onCreateReel} className={actionButton}>
+            <Clapperboard className="size-4" aria-hidden="true" />
+            Open paired reel
+          </button>
+        )}
       </div>
 
       <div className="grid items-start gap-10 px-4 py-6 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
