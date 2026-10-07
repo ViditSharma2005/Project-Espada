@@ -57,7 +57,7 @@ export default function Home() {
     <main className="h-screen min-h-[38rem] w-full bg-black">
       <WorksWheel
         items={TEACHINGS}
-        label={PROJECT_NAME}
+        label={"सृजन"}
         action="Read teaching"
       />
     </main>
