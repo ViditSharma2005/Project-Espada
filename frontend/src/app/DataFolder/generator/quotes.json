@@ -1,65 +1,191 @@
 [
   {
-    "id": "arise-awake",
-    "quote": "Arise, awake, and stop not till the goal is reached.",
-    "title": "Arise, awake",
-    "work": "Katha Upanishad",
+    "id": "spirituality",
+    "quote": "Each soul is potentially divine.",
+    "title": "Spirituality",
+    "work": "Raja Yoga",
     "themes": [
-      "action", "start", "starting", "started", "begin", "beginning", "goal",
-      "goals", "procrastinate", "procrastinating", "procrastination",
-      "postpone", "postponing", "motivation", "motivate", "purpose",
-      "persistence", "finish", "quit", "decision", "habit", "routine",
-      "delay", "delaying", "excuses"
+      "spirituality",
+      "divinity",
+      "soul",
+      "inner life",
+      "meditation",
+      "self knowledge"
     ],
-    "description": "> Arise, awake, and stop not till the goal is reached.\n\nVivekananda kept this line from the Katha Upanishad close. It is not about hurry. It is a refusal to sit down halfway.\n\nGet up. See the work. Stay with it until it is done.",
-    "mediaId": "arise-awake",
-    "tags": ["practice"]
+    "description": "> Each soul is potentially divine.\n\nSpiritual life is not escape from ordinary life. Vivekananda presents it as the discovery and expression of the divinity already within every person.\n\n## Put it into practice\n\nPractice becomes real when inner clarity appears as courage, self-mastery, and respect for the same divine possibility in others.",
+    "mediaId": "spirituality",
+    "tags": [
+      "spirituality",
+      "vivekananda"
+    ]
   },
   {
-    "id": "strength-is-life",
+    "id": "strength",
     "quote": "Strength is life, weakness is death.",
-    "title": "Strength is life",
+    "title": "Strength",
     "work": "Complete Works of Swami Vivekananda",
     "themes": [
-      "strength", "strong", "weakness", "weak", "fear", "courage", "brave",
-      "confidence", "self-belief", "self-doubt", "doubt", "doubts", "power",
-      "mind", "stand", "resilience", "failure", "fail", "anxiety",
-      "inferiority", "bold", "assertive"
+      "strength",
+      "courage",
+      "fear",
+      "confidence",
+      "resilience",
+      "weakness"
     ],
-    "description": "> Strength is life, weakness is death.\n\nHe did not mean force over other people. He meant the strength to stand, to think, and to serve without folding.\n\nA life that will not try has already left the room.",
-    "mediaId": "strength-is-life",
-    "tags": ["strength"]
+    "description": "> Strength is life, weakness is death.\n\nFor Vivekananda, strength is not aggression. It is freedom from fear, steadiness under difficulty, and the courage to act truthfully.\n\n## Put it into practice\n\nAsk whether a thought makes you more capable, fearless, and useful. Reject habits that continually shrink your power to act.",
+    "mediaId": "strength",
+    "tags": [
+      "strength",
+      "vivekananda"
+    ]
   },
   {
-    "id": "the-gymnasium",
-    "quote": "The world is the great gymnasium where we come to make ourselves strong.",
-    "title": "The gymnasium",
-    "work": "Complete Works of Swami Vivekananda",
+    "id": "raja-yoga",
+    "quote": "The goal is to manifest this Divinity within by controlling nature, external and internal.",
+    "title": "Raja Yoga",
+    "work": "Raja Yoga",
     "themes": [
-      "difficulty", "difficult", "struggle", "struggles", "hardship", "hard",
-      "training", "train", "practice", "discipline", "growth", "grow", "pain",
-      "challenge", "challenges", "learning", "learn", "education", "student",
-      "students", "study", "school", "college", "exam", "exams", "build",
-      "builds", "building", "problems", "adversity", "comfort", "world",
-      "gym", "muscle"
+      "raja yoga",
+      "rajyog",
+      "yoga",
+      "mind",
+      "meditation",
+      "self control",
+      "inner nature"
     ],
-    "description": "> The world is the great gymnasium where we come to make ourselves strong.\n\nDifficulty is not a detour. In this reading, it is the apparatus.\n\nYou do not get strong by avoiding the weight.",
-    "mediaId": "the-gymnasium",
-    "tags": ["practice"]
+    "description": "> The goal is to manifest this Divinity within by controlling nature, external and internal.\n\nRaja Yoga is Vivekananda’s practical science of the mind: ethical preparation, disciplined attention, meditation, and direct realization.\n\n## Put it into practice\n\nThe aim is not spectacle. It is mastery of the restless mind so that the deeper nature of the self can become evident.",
+    "mediaId": "raja-yoga",
+    "tags": [
+      "raja-yoga",
+      "vivekananda"
+    ]
   },
   {
-    "id": "live-for-others",
-    "quote": "They alone live who live for others, the rest are more dead than alive.",
-    "title": "Live for others",
+    "id": "fomo",
+    "quote": "Do not wait for anybody or anything. Do whatever you can, build your hope on none.",
+    "title": "Freedom from FOMO",
     "work": "Complete Works of Swami Vivekananda",
     "themes": [
-      "service", "serve", "serving", "others", "help", "helping", "kindness",
-      "kind", "giving", "give", "community", "selfless", "selflessness",
-      "meaning", "impact", "legacy", "alive", "success", "contribution",
-      "contribute", "share", "sharing", "mentorship", "mentoring", "gratitude"
+      "fomo",
+      "comparison",
+      "missing out",
+      "social media",
+      "envy",
+      "restlessness",
+      "contentment",
+      "independence"
     ],
-    "description": "> They alone live who live for others, the rest are more dead than alive.\n\nThis is the hard edge of the teaching. A private win that never leaves the room is not yet a life.\n\n## What it asks\n\n- Do the work in front of you.\n- Leave someone else more able than you found them.\n- Do not confuse being busy with being alive.\n\nThe test is plain. After you pass through a place, is it better.\n\nHold that against the week you just had. Not the week you meant to have.",
-    "mediaId": "live-for-others",
-    "tags": ["service"]
+    "description": "> Do not wait for anybody or anything. Do whatever you can, build your hope on none.\n\nFear of missing out scatters attention toward other people’s paths. Vivekananda repeatedly directs the seeker back to independence, purpose, and work.\n\n## Put it into practice\n\nYou do not need every opportunity. Choose the duty and ideal in front of you, then give them your full energy without measuring your life against another person’s timeline.",
+    "mediaId": "fomo",
+    "tags": [
+      "fomo",
+      "vivekananda"
+    ]
+  },
+  {
+    "id": "focus",
+    "quote": "Take up one idea. Make that one idea your life.",
+    "title": "Focus",
+    "work": "Complete Works of Swami Vivekananda",
+    "themes": [
+      "focus",
+      "one idea",
+      "distraction",
+      "purpose",
+      "goal",
+      "deep work",
+      "attention"
+    ],
+    "description": "> Take up one idea. Make that one idea your life.\n\nVivekananda’s instruction to take up one idea is a discipline of direction. A divided mind spends its force before meaningful work begins.\n\n## Put it into practice\n\nChoose a worthy idea and let study, action, and habit support it. Focus is not intensity for one afternoon; it is repeated loyalty to a clear purpose.",
+    "mediaId": "focus",
+    "tags": [
+      "focus",
+      "vivekananda"
+    ]
+  },
+  {
+    "id": "karma-yoga",
+    "quote": "Work incessantly, but be not attached to it.",
+    "title": "Karma Yoga",
+    "work": "Karma Yoga",
+    "themes": [
+      "karma yoga",
+      "karm yog",
+      "work",
+      "duty",
+      "action",
+      "detachment",
+      "results"
+    ],
+    "description": "> Work incessantly, but be not attached to it.\n\nKarma Yoga teaches action without bondage to reward. Work is performed carefully and wholeheartedly, while the ego’s demand for praise or guaranteed results is released.\n\n## Put it into practice\n\nDetachment does not mean careless work. It means giving your best without allowing success, failure, or recognition to own your peace.",
+    "mediaId": "karma-yoga",
+    "tags": [
+      "karma-yoga",
+      "vivekananda"
+    ]
+  },
+  {
+    "id": "vedanta",
+    "quote": "Each soul is potentially divine.",
+    "title": "Vedanta",
+    "work": "Raja Yoga / Vedanta teachings",
+    "themes": [
+      "vedanta",
+      "oneness",
+      "atman",
+      "brahman",
+      "divinity",
+      "unity",
+      "self"
+    ],
+    "description": "> Each soul is potentially divine.\n\nVivekananda’s Vedanta begins with the divine possibility of every soul and the spiritual unity behind apparent differences.\n\n## Put it into practice\n\nIts practical test is how we see and treat people. If the same reality is present in all, dignity, fearlessness, and service follow naturally.",
+    "mediaId": "vedanta",
+    "tags": [
+      "vedanta",
+      "vivekananda"
+    ]
+  },
+  {
+    "id": "seva",
+    "quote": "They alone live who live for others.",
+    "title": "Seva",
+    "work": "Complete Works of Swami Vivekananda",
+    "themes": [
+      "seva",
+      "service",
+      "serve",
+      "help",
+      "others",
+      "compassion",
+      "community",
+      "selfless"
+    ],
+    "description": "> They alone live who live for others.\n\nSeva is worship expressed through service. Vivekananda asks us to meet human need with respect rather than superiority.\n\n## Put it into practice\n\nReal service strengthens the person being served and purifies the server of vanity. Begin with the concrete need in front of you.",
+    "mediaId": "seva",
+    "tags": [
+      "seva",
+      "vivekananda"
+    ]
+  },
+  {
+    "id": "concentration",
+    "quote": "The power of concentration is the only key to the treasure-house of knowledge.",
+    "title": "Concentration",
+    "work": "Complete Works of Swami Vivekananda",
+    "themes": [
+      "concentration",
+      "attention",
+      "study",
+      "learning",
+      "mind",
+      "discipline",
+      "memory"
+    ],
+    "description": "> The power of concentration is the only key to the treasure-house of knowledge.\n\nVivekananda treats concentration as the foundation of knowledge. When attention is collected, learning deepens and energy stops leaking into distraction.\n\n## Put it into practice\n\nTrain it gradually: one task, a fixed period, fewer interruptions, and a calm return whenever the mind wanders. The return is part of the practice.",
+    "mediaId": "concentration",
+    "tags": [
+      "concentration",
+      "vivekananda"
+    ]
   }
 ]

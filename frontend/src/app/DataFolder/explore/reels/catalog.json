@@ -1,75 +1,272 @@
 [
   {
-    "id": "arise-awake",
+    "id": "spirituality",
     "kind": "reel",
-    "title": "Arise, awake",
-    "description": "> Arise, awake, and stop not till the goal is reached.\n\nVivekananda kept this line from the Katha Upanishad close. It is not about hurry. It is a refusal to sit down halfway.\n\nGet up. See the work. Stay with it until it is done.",
-    "uploadedAt": "2026-09-12T09:30:00+05:30",
+    "title": "Spirituality",
+    "description": "> Each soul is potentially divine.\n\nSpiritual life is not escape from ordinary life. Vivekananda presents it as the discovery and expression of the divinity already within every person.\n\n## Put it into practice\n\nPractice becomes real when inner clarity appears as courage, self-mastery, and respect for the same divine possibility in others.",
+    "uploadedAt": "2026-10-07T09:00:00+05:30",
     "language": "en",
-    "tags": ["practice"],
-    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
-    "uploader": { "id": "samvad", "name": "SAMVAD" },
-    "media": {
-      "src": "/DataFolder/reels/media/arise-awake.mp4",
-      "mimeType": "video/mp4",
-      "width": 720,
-      "height": 1280,
-      "durationSec": 8
+    "tags": [
+      "spirituality",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
     },
-    "source": { "work": "Katha Upanishad" }
-  },
-  {
-    "id": "strength-is-life",
-    "kind": "reel",
-    "title": "Strength is life",
-    "description": "> Strength is life, weakness is death.\n\nHe did not mean force over other people. He meant the strength to stand, to think, and to serve without folding.\n\nA life that will not try has already left the room.",
-    "uploadedAt": "2026-09-18T18:10:00+05:30",
-    "language": "en",
-    "tags": ["strength"],
-    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
-    "uploader": { "id": "samvad", "name": "SAMVAD" },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
     "media": {
-      "src": "/DataFolder/reels/media/strength-is-life.mp4",
+      "src": "/DataFolder/reels/media/spirituality.mp4",
       "mimeType": "video/mp4",
       "width": 720,
       "height": 1280,
-      "durationSec": 8
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Raja Yoga"
     }
   },
   {
-    "id": "the-gymnasium",
+    "id": "strength",
     "kind": "reel",
-    "title": "The gymnasium",
-    "description": "> The world is the great gymnasium where we come to make ourselves strong.\n\nDifficulty is not a detour. In this reading, it is the apparatus.\n\nYou do not get strong by avoiding the weight.",
-    "uploadedAt": "2026-09-24T07:45:00+05:30",
+    "title": "Strength",
+    "description": "> Strength is life, weakness is death.\n\nFor Vivekananda, strength is not aggression. It is freedom from fear, steadiness under difficulty, and the courage to act truthfully.\n\n## Put it into practice\n\nAsk whether a thought makes you more capable, fearless, and useful. Reject habits that continually shrink your power to act.",
+    "uploadedAt": "2026-10-06T09:00:00+05:30",
     "language": "en",
-    "tags": ["practice"],
-    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
-    "uploader": { "id": "samvad", "name": "SAMVAD" },
+    "tags": [
+      "strength",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
     "media": {
-      "src": "/DataFolder/reels/media/the-gymnasium.mp4",
+      "src": "/DataFolder/reels/media/strength.mp4",
       "mimeType": "video/mp4",
       "width": 720,
       "height": 1280,
-      "durationSec": 8
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Complete Works of Swami Vivekananda"
     }
   },
   {
-    "id": "live-for-others",
+    "id": "raja-yoga",
     "kind": "reel",
-    "title": "Live for others",
-    "description": "> They alone live who live for others, the rest are more dead than alive.\n\nThis is the hard edge of the teaching. A private win that never leaves the room is not yet a life.\n\n## What it asks\n\n- Do the work in front of you.\n- Leave someone else more able than you found them.\n- Do not confuse being busy with being alive.\n\nThe test is plain. After you pass through a place, is it better.\n\nHold that against the week you just had. Not the week you meant to have.",
-    "uploadedAt": "2026-10-02T21:05:00+05:30",
+    "title": "Raja Yoga",
+    "description": "> The goal is to manifest this Divinity within by controlling nature, external and internal.\n\nRaja Yoga is Vivekananda’s practical science of the mind: ethical preparation, disciplined attention, meditation, and direct realization.\n\n## Put it into practice\n\nThe aim is not spectacle. It is mastery of the restless mind so that the deeper nature of the self can become evident.",
+    "uploadedAt": "2026-10-05T09:00:00+05:30",
     "language": "en",
-    "tags": ["service"],
-    "speaker": { "id": "swami-vivekananda", "name": "Swami Vivekananda" },
-    "uploader": { "id": "samvad", "name": "SAMVAD" },
+    "tags": [
+      "raja-yoga",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
     "media": {
-      "src": "/DataFolder/reels/media/live-for-others.mp4",
+      "src": "/DataFolder/reels/media/raja-yoga.mp4",
       "mimeType": "video/mp4",
       "width": 720,
       "height": 1280,
-      "durationSec": 8
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Raja Yoga"
+    }
+  },
+  {
+    "id": "fomo",
+    "kind": "reel",
+    "title": "Freedom from FOMO",
+    "description": "> Do not wait for anybody or anything. Do whatever you can, build your hope on none.\n\nFear of missing out scatters attention toward other people’s paths. Vivekananda repeatedly directs the seeker back to independence, purpose, and work.\n\n## Put it into practice\n\nYou do not need every opportunity. Choose the duty and ideal in front of you, then give them your full energy without measuring your life against another person’s timeline.",
+    "uploadedAt": "2026-10-04T09:00:00+05:30",
+    "language": "en",
+    "tags": [
+      "fomo",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
+    "media": {
+      "src": "/DataFolder/reels/media/fomo.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Complete Works of Swami Vivekananda"
+    }
+  },
+  {
+    "id": "focus",
+    "kind": "reel",
+    "title": "Focus",
+    "description": "> Take up one idea. Make that one idea your life.\n\nVivekananda’s instruction to take up one idea is a discipline of direction. A divided mind spends its force before meaningful work begins.\n\n## Put it into practice\n\nChoose a worthy idea and let study, action, and habit support it. Focus is not intensity for one afternoon; it is repeated loyalty to a clear purpose.",
+    "uploadedAt": "2026-10-03T09:00:00+05:30",
+    "language": "en",
+    "tags": [
+      "focus",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
+    "media": {
+      "src": "/DataFolder/reels/media/focus.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Complete Works of Swami Vivekananda"
+    }
+  },
+  {
+    "id": "karma-yoga",
+    "kind": "reel",
+    "title": "Karma Yoga",
+    "description": "> Work incessantly, but be not attached to it.\n\nKarma Yoga teaches action without bondage to reward. Work is performed carefully and wholeheartedly, while the ego’s demand for praise or guaranteed results is released.\n\n## Put it into practice\n\nDetachment does not mean careless work. It means giving your best without allowing success, failure, or recognition to own your peace.",
+    "uploadedAt": "2026-10-02T09:00:00+05:30",
+    "language": "en",
+    "tags": [
+      "karma-yoga",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
+    "media": {
+      "src": "/DataFolder/reels/media/karma-yoga.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Karma Yoga"
+    }
+  },
+  {
+    "id": "vedanta",
+    "kind": "reel",
+    "title": "Vedanta",
+    "description": "> Each soul is potentially divine.\n\nVivekananda’s Vedanta begins with the divine possibility of every soul and the spiritual unity behind apparent differences.\n\n## Put it into practice\n\nIts practical test is how we see and treat people. If the same reality is present in all, dignity, fearlessness, and service follow naturally.",
+    "uploadedAt": "2026-10-01T09:00:00+05:30",
+    "language": "en",
+    "tags": [
+      "vedanta",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
+    "media": {
+      "src": "/DataFolder/reels/media/vedanta.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Raja Yoga / Vedanta teachings"
+    }
+  },
+  {
+    "id": "seva",
+    "kind": "reel",
+    "title": "Seva",
+    "description": "> They alone live who live for others.\n\nSeva is worship expressed through service. Vivekananda asks us to meet human need with respect rather than superiority.\n\n## Put it into practice\n\nReal service strengthens the person being served and purifies the server of vanity. Begin with the concrete need in front of you.",
+    "uploadedAt": "2026-09-30T09:00:00+05:30",
+    "language": "en",
+    "tags": [
+      "seva",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
+    "media": {
+      "src": "/DataFolder/reels/media/seva.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Complete Works of Swami Vivekananda"
+    }
+  },
+  {
+    "id": "concentration",
+    "kind": "reel",
+    "title": "Concentration",
+    "description": "> The power of concentration is the only key to the treasure-house of knowledge.\n\nVivekananda treats concentration as the foundation of knowledge. When attention is collected, learning deepens and energy stops leaking into distraction.\n\n## Put it into practice\n\nTrain it gradually: one task, a fixed period, fewer interruptions, and a calm return whenever the mind wanders. The return is part of the practice.",
+    "uploadedAt": "2026-09-29T09:00:00+05:30",
+    "language": "en",
+    "tags": [
+      "concentration",
+      "vivekananda"
+    ],
+    "speaker": {
+      "id": "swami-vivekananda",
+      "name": "Swami Vivekananda"
+    },
+    "uploader": {
+      "id": "samvad",
+      "name": "SAMVAD"
+    },
+    "media": {
+      "src": "/DataFolder/reels/media/concentration.mp4",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 30
+    },
+    "source": {
+      "work": "Complete Works of Swami Vivekananda"
     }
   }
 ]

@@ -2,10 +2,15 @@
 // instead of redefining shapes for the same quote row.
 
 export type QuoteMediaId =
-  | "arise-awake"
-  | "live-for-others"
-  | "strength-is-life"
-  | "the-gymnasium";
+  | "spirituality"
+  | "strength"
+  | "raja-yoga"
+  | "fomo"
+  | "focus"
+  | "karma-yoga"
+  | "vedanta"
+  | "seva"
+  | "concentration";
 
 export type QuoteEntry = {
   /** Stable kebab-case id (unique per quote). */

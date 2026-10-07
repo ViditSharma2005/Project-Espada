@@ -10,10 +10,15 @@ import raw from "./quotes.json";
 import type { QuoteEntry, QuoteMediaId } from "./types";
 
 const MEDIA_IDS: QuoteMediaId[] = [
-  "arise-awake",
-  "live-for-others",
-  "strength-is-life",
-  "the-gymnasium",
+  "spirituality",
+  "strength",
+  "raja-yoga",
+  "fomo",
+  "focus",
+  "karma-yoga",
+  "vedanta",
+  "seva",
+  "concentration",
 ];
 
 function isQuoteEntry(value: unknown): value is QuoteEntry {
