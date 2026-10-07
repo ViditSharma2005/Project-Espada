@@ -1,0 +1,65 @@
+[
+  {
+    "id": "arise-awake",
+    "quote": "Arise, awake, and stop not till the goal is reached.",
+    "title": "Arise, awake",
+    "work": "Katha Upanishad",
+    "themes": [
+      "action", "start", "starting", "started", "begin", "beginning", "goal",
+      "goals", "procrastinate", "procrastinating", "procrastination",
+      "postpone", "postponing", "motivation", "motivate", "purpose",
+      "persistence", "finish", "quit", "decision", "habit", "routine",
+      "delay", "delaying", "excuses"
+    ],
+    "description": "> Arise, awake, and stop not till the goal is reached.\n\nVivekananda kept this line from the Katha Upanishad close. It is not about hurry. It is a refusal to sit down halfway.\n\nGet up. See the work. Stay with it until it is done.",
+    "mediaId": "arise-awake",
+    "tags": ["practice"]
+  },
+  {
+    "id": "strength-is-life",
+    "quote": "Strength is life, weakness is death.",
+    "title": "Strength is life",
+    "work": "Complete Works of Swami Vivekananda",
+    "themes": [
+      "strength", "strong", "weakness", "weak", "fear", "courage", "brave",
+      "confidence", "self-belief", "self-doubt", "doubt", "doubts", "power",
+      "mind", "stand", "resilience", "failure", "fail", "anxiety",
+      "inferiority", "bold", "assertive"
+    ],
+    "description": "> Strength is life, weakness is death.\n\nHe did not mean force over other people. He meant the strength to stand, to think, and to serve without folding.\n\nA life that will not try has already left the room.",
+    "mediaId": "strength-is-life",
+    "tags": ["strength"]
+  },
+  {
+    "id": "the-gymnasium",
+    "quote": "The world is the great gymnasium where we come to make ourselves strong.",
+    "title": "The gymnasium",
+    "work": "Complete Works of Swami Vivekananda",
+    "themes": [
+      "difficulty", "difficult", "struggle", "struggles", "hardship", "hard",
+      "training", "train", "practice", "discipline", "growth", "grow", "pain",
+      "challenge", "challenges", "learning", "learn", "education", "student",
+      "students", "study", "school", "college", "exam", "exams", "build",
+      "builds", "building", "problems", "adversity", "comfort", "world",
+      "gym", "muscle"
+    ],
+    "description": "> The world is the great gymnasium where we come to make ourselves strong.\n\nDifficulty is not a detour. In this reading, it is the apparatus.\n\nYou do not get strong by avoiding the weight.",
+    "mediaId": "the-gymnasium",
+    "tags": ["practice"]
+  },
+  {
+    "id": "live-for-others",
+    "quote": "They alone live who live for others, the rest are more dead than alive.",
+    "title": "Live for others",
+    "work": "Complete Works of Swami Vivekananda",
+    "themes": [
+      "service", "serve", "serving", "others", "help", "helping", "kindness",
+      "kind", "giving", "give", "community", "selfless", "selflessness",
+      "meaning", "impact", "legacy", "alive", "success", "contribution",
+      "contribute", "share", "sharing", "mentorship", "mentoring", "gratitude"
+    ],
+    "description": "> They alone live who live for others, the rest are more dead than alive.\n\nThis is the hard edge of the teaching. A private win that never leaves the room is not yet a life.\n\n## What it asks\n\n- Do the work in front of you.\n- Leave someone else more able than you found them.\n- Do not confuse being busy with being alive.\n\nThe test is plain. After you pass through a place, is it better.\n\nHold that against the week you just had. Not the week you meant to have.",
+    "mediaId": "live-for-others",
+    "tags": ["service"]
+  }
+]

@@ -1,11 +1,7 @@
-import React from 'react'
+// src/app/(shell)/generator/page.tsx — thin server wrapper; all state and
+// logic live in components/shell/generator/GeneratorView.tsx.
+import { GeneratorView } from "@/components/shell/generator/GeneratorView";
 
-const GeneratorPage = () => {
-  return (
-    <div>
-      HA HA.. The Generator page is in development.
-    </div>
-  )
+export default function GeneratorPage() {
+  return <GeneratorView />;
 }
-
-export default GeneratorPage
