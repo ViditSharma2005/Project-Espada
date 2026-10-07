@@ -58,7 +58,11 @@ export function useGenerator() {
       })
         .then(async (response) => {
           if (!response.ok) return null;
-          return (await response.json()) as { selectedId?: string; explanation?: string };
+          return (await response.json()) as {
+            selectedId?: string;
+            explanation?: string;
+            solution?: string;
+          };
         })
         .catch(() => null);
 
@@ -76,7 +80,15 @@ export function useGenerator() {
             const finalMatch = selected
               ? { entry: selected, score: 100, terms: selected.themes.slice(0, 4) }
               : localMatch;
-            setResult(buildGeneratedReel(finalMatch, prompt, lengthSec, ai?.explanation));
+            setResult(
+              buildGeneratedReel(
+                finalMatch,
+                prompt,
+                lengthSec,
+                ai?.explanation,
+                ai?.solution
+              )
+            );
             setPhase("done");
           });
           return;

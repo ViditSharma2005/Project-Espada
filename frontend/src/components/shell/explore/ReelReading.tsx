@@ -7,10 +7,12 @@ export function ReelReading({
   reel,
   className,
   generatedExplanation,
+  generatedSolution,
 }: {
   reel: Reel;
   className?: string;
   generatedExplanation?: string;
+  generatedSolution?: string;
 }) {
   return (
     <section aria-label="Reading" className={cn("flex min-h-0 flex-col", className)}>
@@ -27,8 +29,8 @@ export function ReelReading({
         <div className="max-w-[40rem]">
           <MarkdownBody
             source={
-              generatedExplanation
-                ? `${reel.description}\n\n## Why this fits your prompt\n\n${generatedExplanation}`
+              generatedExplanation || generatedSolution
+                ? `${reel.description}${generatedExplanation ? `\n\n## Why this fits your prompt\n\n${generatedExplanation}` : ""}${generatedSolution ? `\n\n## Your solution\n\n${generatedSolution}` : ""}`
                 : reel.description
             }
           />

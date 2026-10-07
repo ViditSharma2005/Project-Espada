@@ -37,6 +37,8 @@ export type GeneratedReel = {
     generatedAt: string;
     /** AI explanation shown only on the generated result. */
     explanation?: string;
+    /** Prompt-specific, practical answer grounded in the selected reel. */
+    solution?: string;
   };
 };
 
@@ -67,45 +69,77 @@ function tokenize(text: string): string[] {
  * the quote/title/work (1). Ties keep corpus order, so a given corpus makes
  * the matcher deterministic.
  */
+const RELATED_TERMS: Record<string, string[]> = {
+  procrastination: ["focus", "purpose", "work", "action", "discipline"],
+  procrastinate: ["focus", "purpose", "work", "action", "discipline"],
+  study: ["study", "learning", "concentration", "focus", "discipline"],
+  students: ["study", "learning", "focus", "purpose"],
+  motivation: ["purpose", "strength", "courage", "action"],
+  stress: ["mind", "meditation", "self control", "strength"],
+  distracted: ["distraction", "focus", "attention", "concentration"],
+  distraction: ["distraction", "focus", "attention", "concentration"],
+  comparison: ["comparison", "envy", "contentment", "independence", "missing out"],
+  comparing: ["comparison", "envy", "contentment", "independence", "missing out"],
+  anxious: ["fear", "confidence", "strength", "mind", "contentment"],
+  anxiety: ["fear", "confidence", "strength", "mind", "contentment"],
+  opportunity: ["missing out", "independence", "contentment", "purpose"],
+  opportunities: ["missing out", "independence", "contentment", "purpose"],
+  missing: ["missing out", "comparison", "contentment", "independence"],
+  others: ["comparison", "envy", "contentment", "independence"],
+  purpose: ["purpose", "one idea", "duty", "work"],
+  helping: ["service", "serve", "help", "compassion", "selfless"],
+  community: ["community", "service", "others", "compassion"],
+};
+
+function relatedTokens(tokens: string[]): string[] {
+  return [...new Set(tokens.flatMap((token) => RELATED_TERMS[token] ?? []))];
+}
+
+/**
+ * Deterministic multi-factor fallback used when Gemini is unavailable.
+ * It considers direct theme hits, phrase hits, title/quote context, and
+ * intent synonyms so selection does not collapse to the first catalog row.
+ */
+export function rankQuotes(
+  prompt: string,
+  entries: QuoteEntry[] = corpus
+): MatchResult[] {
+  const tokens = tokenize(prompt);
+  const related = relatedTokens(tokens);
+  return entries
+    .map((entry) => {
+      const searchable = `${entry.quote} ${entry.title} ${entry.work} ${entry.description} ${entry.themes.join(" ")} ${(entry.tags ?? []).join(" ")}`.toLowerCase();
+      const terms: string[] = [];
+      let score = 0;
+      for (const token of tokens) {
+        const exactTheme = entry.themes.some((theme) => theme.toLowerCase() === token);
+        const prefixTheme = entry.themes.some((theme) => {
+          const candidate = theme.toLowerCase();
+          return token.length >= 4 && candidate.length >= 4 &&
+            (candidate.startsWith(token) || token.startsWith(candidate));
+        });
+        if (exactTheme) { score += 12; terms.push(token); }
+        else if (prefixTheme) { score += 8; terms.push(token); }
+        else if (searchable.includes(token)) { score += 3; terms.push(token); }
+      }
+      for (const term of related) {
+        if (searchable.includes(term)) { score += 4; if (!terms.includes(term)) terms.push(term); }
+      }
+      const phraseHits = entry.themes.filter((theme) =>
+        theme.includes(" ") && prompt.toLowerCase().includes(theme.toLowerCase())
+      );
+      score += phraseHits.length * 14;
+      terms.push(...phraseHits);
+      return { entry, score, terms: [...new Set(terms)] };
+    })
+    .sort((a, b) => b.score - a.score);
+}
+
 export function matchQuote(
   prompt: string,
   entries: QuoteEntry[] = corpus
 ): MatchResult {
-  const tokens = tokenize(prompt);
-
-  let best: MatchResult = { entry: entries[0], score: 0, terms: [] };
-
-  for (const entry of entries) {
-    let score = 0;
-    const terms: string[] = [];
-
-    for (const token of tokens) {
-      const theme = entry.themes.find(
-        (candidate) =>
-          candidate === token ||
-          (token.length >= 4 &&
-            candidate.length >= 4 &&
-            (candidate.startsWith(token) || token.startsWith(candidate)))
-      );
-      if (theme) {
-        score += 3;
-        terms.push(theme);
-        continue;
-      }
-      const haystack =
-        `${entry.quote} ${entry.title} ${entry.work}`.toLowerCase();
-      if (haystack.includes(token)) {
-        score += 1;
-        terms.push(token);
-      }
-    }
-
-    if (score > best.score) {
-      best = { entry, score, terms };
-    }
-  }
-
-  return best;
+  return rankQuotes(prompt, entries)[0] ?? { entry: entries[0], score: 0, terms: [] };
 }
 
 /** Short lines that run inside the frame while the demo pipeline "renders". */
@@ -149,7 +183,8 @@ export function buildGeneratedReel(
   match: MatchResult,
   prompt: string,
   lengthSec: LengthSec,
-  explanation?: string
+  explanation?: string,
+  solution?: string
 ): GeneratedReel {
   const suffix = Math.random().toString(36).slice(2, 6);
   const generatedAt = new Date().toISOString();
@@ -178,6 +213,7 @@ export function buildGeneratedReel(
       matchedTerms: match.terms,
       generatedAt,
       explanation,
+      solution,
     },
   };
 }

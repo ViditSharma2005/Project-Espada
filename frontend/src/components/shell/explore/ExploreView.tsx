@@ -19,6 +19,7 @@ export function ExploreView() {
 
   const [activeId, setActiveId] = useState(startId);
   const [generatedExplanation, setGeneratedExplanation] = useState<string>();
+  const [generatedSolution, setGeneratedSolution] = useState<string>();
   const { muted, volume, setMuted, setVolume, toggleMuted } = usePlayback();
   const saved = useSavedReels();
   const reel = getReel(activeId) ?? reels[0];
@@ -26,14 +27,18 @@ export function ExploreView() {
   useEffect(() => {
     if (!generated) {
       setGeneratedExplanation(undefined);
+      setGeneratedSolution(undefined);
       return;
     }
     try {
       const stored = JSON.parse(sessionStorage.getItem("samvad.generated-explanation") || "null") as {
         reelId?: string;
         explanation?: string;
+        solution?: string;
       } | null;
-      setGeneratedExplanation(stored?.reelId === reel?.id ? stored.explanation : undefined);
+      const matchesReel = stored?.reelId === reel?.id;
+      setGeneratedExplanation(matchesReel ? stored?.explanation : undefined);
+      setGeneratedSolution(matchesReel ? stored?.solution : undefined);
     } catch {
       setGeneratedExplanation(undefined);
     }
@@ -77,6 +82,7 @@ export function ExploreView() {
         <ReelReading
           reel={reel}
           generatedExplanation={generatedExplanation}
+          generatedSolution={generatedSolution}
           className="h-[70%]"
         />
         <ReelRecord

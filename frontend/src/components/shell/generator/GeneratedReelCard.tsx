@@ -181,8 +181,8 @@ export function GeneratedReelCard({
         <div className="border-t border-white/10 pt-3.5">
           <MarkdownBody
             source={
-              meta.explanation
-                ? `${record.description}\n\n## Why this fits your prompt\n\n${meta.explanation}`
+              meta.explanation || meta.solution
+                ? `${record.description}${meta.explanation ? `\n\n## Why this fits your prompt\n\n${meta.explanation}` : ""}${meta.solution ? `\n\n## Your solution\n\n${meta.solution}` : ""}`
                 : record.description
             }
           />
@@ -222,7 +222,11 @@ export function GeneratedReelCard({
               if (meta.explanation) {
                 sessionStorage.setItem(
                   "samvad.generated-explanation",
-                  JSON.stringify({ reelId: meta.matched.mediaId, explanation: meta.explanation })
+                  JSON.stringify({
+                    reelId: meta.matched.mediaId,
+                    explanation: meta.explanation,
+                    solution: meta.solution,
+                  })
                 );
               }
             }}
